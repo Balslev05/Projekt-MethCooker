@@ -152,17 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6be6f95a611e194497455a0ae6a7d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ingredientsneeded:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  Ingredientsneeded: []
   CurrentNote: {fileID: 11400000, guid: 8067e27295897e642b8feca7830c3400, type: 2}
 --- !u!4 &891612246
 Transform:

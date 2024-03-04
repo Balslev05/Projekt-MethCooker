@@ -384,7 +384,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ingridient 5
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
   m_sharedMaterial: {fileID: 1717815675717566778, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ingridient 7
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
   m_sharedMaterial: {fileID: 1717815675717566778, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
@@ -652,7 +652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ingridient 2
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
   m_sharedMaterial: {fileID: 1717815675717566778, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
@@ -786,7 +786,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ingridient 8
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
   m_sharedMaterial: {fileID: 1717815675717566778, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
@@ -1097,7 +1097,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ingridient 4
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
   m_sharedMaterial: {fileID: 1717815675717566778, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
@@ -1231,7 +1231,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ingridient 10
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
   m_sharedMaterial: {fileID: 1717815675717566778, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
@@ -1518,7 +1518,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ingridient 1
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
   m_sharedMaterial: {fileID: 1717815675717566778, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
@@ -1697,7 +1697,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ingridient 6
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
   m_sharedMaterial: {fileID: 1717815675717566778, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
@@ -1923,7 +1923,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ingridient 9
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
   m_sharedMaterial: {fileID: 1717815675717566778, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
@@ -2009,6 +2009,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1510961024}
+  - component: {fileID: 1510961025}
   m_Layer: 0
   m_Name: RecipeController
   m_TagString: Untagged
@@ -2031,6 +2032,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1510961025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510961023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86095becb74e8f945ab053e687aa7a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Drugs: {fileID: 0}
+  indgridients:
+  - {fileID: 1185237115}
+  - {fileID: 383138849}
+  - {fileID: 1838848224}
+  - {fileID: 645714878}
+  - {fileID: 340303211}
+  - {fileID: 1278148094}
+  - {fileID: 345073077}
+  - {fileID: 463125315}
+  - {fileID: 1361749612}
+  - {fileID: 797900066}
+  currentNote: {fileID: 11400000, guid: 8067e27295897e642b8feca7830c3400, type: 2}
 --- !u!1 &1607076296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2412,7 +2438,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ingridient 3
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
   m_sharedMaterial: {fileID: 1717815675717566778, guid: c570d8ce2c4c79745873c46c194ee4fc, type: 2}
