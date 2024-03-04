@@ -21,7 +21,7 @@ public class RecipeController : MonoBehaviour
         Drug.text = currentNote.NameOfDrug;
         for (int i = 0; i < currentNote.NamesOfIngrdients.Length; i++)
         {
-            indgridients[i].text = currentNote.NamesOfIngrdients[i].name;
+            indgridients[i].text = currentNote.NamesOfIngrdients[i].ToString();
         }
     }
 }

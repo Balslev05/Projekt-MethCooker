@@ -8,9 +8,11 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Stats")]
     public int speed;
-
-    public int SprintSpeed;
-    public float Stamina;
+    public int sprintSpeed;
+    public int sprintCooldown;
+    public float maxStamina;
+    public float currentStamina;
+    
     
     [Header("Inputs")]
     public KeyCode sprintKey = KeyCode.LeftShift;
@@ -25,7 +27,8 @@ public class PlayerMovement : MonoBehaviour
     
     void Start()
     {
-         StartSpeed = speed;
+        currentStamina = maxStamina;
+        StartSpeed = speed;
         _rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
@@ -50,10 +53,11 @@ public class PlayerMovement : MonoBehaviour
     
     public void Sprint()
     {
-        if(Input.GetKeyDown(sprintKey) && Stamina > 0)
+        if(Input.GetKeyDown(sprintKey) && currentStamina > 0)
         {
-            speed = SprintSpeed;
+            speed = sprintSpeed;
             Sprinting = true;
+            currentStamina--;
         }
         if (Input.GetKeyUp(sprintKey))
         {
@@ -63,10 +67,10 @@ public class PlayerMovement : MonoBehaviour
         
         if (Sprinting)
         {
-            Stamina -= Time.deltaTime;
+            currentStamina -= Time.deltaTime;
         }
-        else {Stamina += Time.deltaTime;}
+        else {currentStamina += Time.deltaTime;}
         
-        Stamina = math.clamp(Stamina,0,5);   
+        currentStamina = math.clamp(currentStamina,0,maxStamina);   
     }
 }
