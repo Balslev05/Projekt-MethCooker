@@ -123,6 +123,32 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1776046277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 566519662309353887, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+  m_PrefabInstance: {fileID: 272582078361554372}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1776046282
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776046277}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1317df60522215c4b9f7da11aade3bb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1987086796
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,9 +294,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 242313807037593485, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1487844064, guid: e8fb835fb9dd49242bb038f7d2621d0b, type: 3}
+    - target: {fileID: 242313807037593485, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 242313807037593485, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 566519662309353887, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
       propertyPath: m_Name
       value: "Player(Morten M\xF8rk)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128961982107573356, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6777365946471703171, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6777365946471703171, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6777365946471703171, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6777365946471703171, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -312,13 +366,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6777365946471703171, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8794824787843077507, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
       propertyPath: speed
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8794824787843077507, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
       propertyPath: Stamina
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794824787843077507, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: jumpForce
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8794824787843077507, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
       propertyPath: maxStamina
@@ -329,13 +391,20 @@ PrefabInstance:
       value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8794824787843077507, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: jumpDamping
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794824787843077507, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
       propertyPath: sprintSpeed
-      value: 300
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 566519662309353887, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1776046282}
   m_SourcePrefab: {fileID: 100100000, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
