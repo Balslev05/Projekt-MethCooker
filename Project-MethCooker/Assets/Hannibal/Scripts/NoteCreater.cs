@@ -6,6 +6,6 @@ using UnityEngine;
 public class NoteCreater : ScriptableObject
 {
     public string NameOfDrug;
-    public string[] NamesOfIngrdients;
+    public Ingredients[] NamesOfIngrdients;
 
 }

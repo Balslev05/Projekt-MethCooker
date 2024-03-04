@@ -9,14 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04092f8c97a7e184b99366a4c154f2a1, type: 3}
-  m_Name: drug 2
+  m_Script: {fileID: 11500000, guid: bfbd24438419abd40807e0f11facd8fc, type: 3}
+  m_Name: Technetium
   m_EditorClassIdentifier: 
-  NameOfDrug: kgujygy
-  NamesOfIngrdients:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  name: 

@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameOfDrug: Meth
   NamesOfIngrdients:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - {fileID: 11400000, guid: bcce4e39cbe8d864a83c203a442b3351, type: 2}
+  - {fileID: 11400000, guid: 1f1b3d32f9aa23d40b8e0c0ceeb5da94, type: 2}
+  - {fileID: 11400000, guid: 65718df910c0aa2428868e96adfe1c67, type: 2}
+  - {fileID: 11400000, guid: 9cd83c9a953dea2419a1907ebff7dc1a, type: 2}
