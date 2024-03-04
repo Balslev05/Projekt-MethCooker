@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class Cooker : MonoBehaviour
 {
-    public Ingredients[] Ingredientsneeded = new Ingredients[10];
+    public List<Ingredients> Ingredientsneeded = new();
+    
+    //public Ingredients[] Ingredientsneeded = new Ingredients[10];
     public NoteCreater CurrentNote;
 
     private Ingredients addIngrediant;
@@ -26,8 +28,7 @@ public class Cooker : MonoBehaviour
         
         for (int i = 0; i < CurrentNote.NamesOfIngrdients.Length; i++)
         {
-            Ingredientsneeded[i] = CurrentNote.NamesOfIngrdients[i];
-            addIngrediant = Ingredientsneeded[i];
+            Ingredientsneeded.Add(CurrentNote.NamesOfIngrdients[i]);
         }
     }
 }
