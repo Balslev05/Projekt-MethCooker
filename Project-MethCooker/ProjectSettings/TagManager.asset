@@ -8,6 +8,7 @@ TagManager:
   - Undefined
   - Drug
   - Cooker
+  - Meth
   layers:
   - Default
   - TransparentFX
