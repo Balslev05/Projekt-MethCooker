@@ -50,8 +50,6 @@ public class PlayerMovement : MonoBehaviour
     
     public void Sprint()
     {
-        
-
         if(Input.GetKeyDown(sprintKey) && Stamina > 0)
         {
             speed = SprintSpeed;
