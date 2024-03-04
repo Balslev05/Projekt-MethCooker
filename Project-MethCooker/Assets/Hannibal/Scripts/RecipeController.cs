@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RecipeController : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI Drugs;
+    [SerializeField] TextMeshProUGUI Drug;
     [SerializeField] TextMeshProUGUI[] indgridients;
 
     public NoteCreater currentNote;
@@ -18,6 +18,7 @@ public class RecipeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Drug.text = currentNote.NameOfDrug;
         for (int i = 0; i < currentNote.NamesOfIngrdients.Length; i++)
         {
             indgridients[i].text = currentNote.NamesOfIngrdients[i].name;
