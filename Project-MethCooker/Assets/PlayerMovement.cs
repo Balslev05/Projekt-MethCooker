@@ -16,9 +16,10 @@ public class PlayerMovement : MonoBehaviour
     
     [Header("Inputs")]
     public KeyCode sprintKey = KeyCode.LeftShift;
+    public KeyCode jump = KeyCode.Space;
     
     [Header("Assignebels")]
-   [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private Rigidbody2D _rb;
    
     private Vector2 _movement;
     private bool Sprinting = false;
@@ -36,10 +37,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Sprint();
-        move();
+        Move();
     }
 
-    public void move()
+    public void Move()
     {
         Vector2 dir = _rb.transform.position - transform.position;
         dir = dir.normalized;
@@ -48,9 +49,8 @@ public class PlayerMovement : MonoBehaviour
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
         
-        _rb.velocity = new Vector2((_movement.x * speed) * Time.deltaTime,(_movement.y * speed) * Time.deltaTime);
+        _rb.velocity = new Vector2((_movement.x * speed),(_movement.y * speed));
     }
-    
     public void Sprint()
     {
         if(Input.GetKeyDown(sprintKey) && currentStamina > 0)

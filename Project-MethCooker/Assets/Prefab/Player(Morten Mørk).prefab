@@ -47,11 +47,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
-  sprintSpeed: 300
+  sprintSpeed: 0
   sprintCooldown: 0
-  maxStamina: 3
+  maxStamina: 0
   currentStamina: 0
   sprintKey: 304
+  jump: 32
   _rb: {fileID: 4128961982107573356}
 --- !u!212 &242313807037593485
 SpriteRenderer:
