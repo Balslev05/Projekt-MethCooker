@@ -6,6 +6,11 @@ using UnityEngine;
 public class Cooker : MonoBehaviour
 {
     public List<Ingredients> Ingredientsneeded = new();
+    public List<Ingredients> currentingredient = new();
+    public float Cookingcounter;
+    public bool Cooking;
+
+    public int CookingCondition;
     
     //public Ingredients[] Ingredientsneeded = new Ingredients[10];
     public NoteCreater CurrentNote;
@@ -20,14 +25,48 @@ public class Cooker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(currentingredient.Count == Ingredientsneeded.Count)
+        {
+            CheckIfIngredientsIsPresent();
+        }
+        if (Cooking)
+        {
+            Cookingcounter -= Time.deltaTime;
+        }
     }
 
     public void UpdateIngrediants()
     {
-        
         for (int i = 0; i < CurrentNote.NamesOfIngrdients.Length; i++)
         {
-            Ingredientsneeded.Add(CurrentNote.NamesOfIngrdients[i]);
+            Ingredientsneeded.Add(CurrentNote.NamesOfIngrdients[i]);   
         }
+    }
+
+    public void CheckIfIngredientsIsPresent()
+    {
+        for (int i = 0; i < CurrentNote.NamesOfIngrdients.Length; i++)
+        {
+            if (currentingredient[i] = CurrentNote.NamesOfIngrdients[i])
+            {
+                CookingCondition++;
+            }
+        }
+        CheckPot();
+    }
+    public void CheckPot()
+    {
+        if (CookingCondition == CurrentNote.NamesOfIngrdients.Length)
+        {
+            Startcooking();
+        }
+        else
+        {
+            //BOOOPOOOOOPPOM!!!!!
+        }
+    }
+    public void Startcooking()
+    {
+       Cooking = true;
     }
 }

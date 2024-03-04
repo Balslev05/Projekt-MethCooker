@@ -18,7 +18,7 @@ public class PickUp : MonoBehaviour
     {
              
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Drug"))
         {
@@ -27,6 +27,19 @@ public class PickUp : MonoBehaviour
                 carryitem = other.GetComponent<Item>().Ingredients;
             }
         }
+        else if (other.gameObject.CompareTag("Cooker"))
+        {
+            if (!Input.GetKey(KeyCode.E)) 
+            {
+                Cooker cookerCollied = other.GetComponent<Cooker>();
+                if (cookerCollied.currentingredient.Contains(carryitem) == false)
+                {
+                    cookerCollied.currentingredient.Add(carryitem);
+                    carryitem = null;
+                }
+                
+            }
+        }
     }
-
+    
 }
