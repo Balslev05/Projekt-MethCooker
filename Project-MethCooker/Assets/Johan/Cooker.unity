@@ -462,6 +462,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ingredientsneeded: []
   currentingredient: []
+  Cookingtimer: 60
+  Cooking: 0
+  CookingCondition: 0
   CurrentNote: {fileID: 11400000, guid: 8067e27295897e642b8feca7830c3400, type: 2}
 --- !u!4 &891612246
 Transform:
