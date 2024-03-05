@@ -669,6 +669,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3874349cbfdf2ea45bbfb216fbfa7a57, type: 2}
   - {fileID: 11400000, guid: 875c3bfd77d3a8e48bd02acc4f6f28d6, type: 2}
   - {fileID: 11400000, guid: 8067e27295897e642b8feca7830c3400, type: 2}
+  newRecipe: {fileID: 1510961025}
   sellDrugs: {fileID: 269758985}
   cash: 0
   dialogeText: {fileID: 165040802}
@@ -3137,7 +3138,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1198106115}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 269758992}
+        m_TargetAssemblyTypeName: JesseBehavior, Assembly-CSharp
+        m_MethodName: newRecipePress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1198106115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3907,8 +3920,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 184}
-  m_SizeDelta: {x: 500, y: 200}
+  m_AnchoredPosition: {x: 0.0000076293945, y: 200}
+  m_SizeDelta: {x: 704.35, y: 204.41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1813058590
 MonoBehaviour:
