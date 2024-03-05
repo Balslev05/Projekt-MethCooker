@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using Random = Unity.Mathematics.Random;
+using Random = UnityEngine.Random;
 
 public class JesseBehavior : MonoBehaviour
 {
