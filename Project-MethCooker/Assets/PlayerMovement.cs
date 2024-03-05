@@ -55,6 +55,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (_rb.velocity.magnitude > speed)
+        {
+            _rb.velocity = Vector2.ClampMagnitude(_rb.velocity,speed);
+        }
         JumpFall();
         if (jumping)
         {
@@ -138,8 +142,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(jump) && !jumping && !Kidle)
         {
-            CanStand = false;
             jumping = true;
+            CanStand = false;
             _rb.velocity *= jumpForce;
             animator.Play("Jump");
             
@@ -150,7 +154,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.Play("StandUp");
             
-            Invoke(nameof(StandingUp),0.5f);
+            Invoke(nameof(StandingUp),1f);
         }
         
         
@@ -168,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.Play("StandUpKilde");
             
-            Invoke(nameof(StandingUp),0.5f);
+            Invoke(nameof(StandingUp),1f);
         }
     }
     public void StandingUp()

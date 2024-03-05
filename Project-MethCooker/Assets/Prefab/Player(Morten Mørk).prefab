@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 4128961982107573356}
   - component: {fileID: -713595647607506745}
   - component: {fileID: 2306578774913783758}
+  - component: {fileID: 7609272516173923213}
+  - component: {fileID: 1611408879399549051}
+  - component: {fileID: 3580891924320793451}
   m_Layer: 0
   m_Name: "Player(Morten M\xF8rk)"
   m_TagString: Untagged
@@ -207,3 +210,59 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7609272516173923213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566519662309353887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47ce7c116bf20d84894e97cf0103325e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NotebookHit: 0
+  NotebookOpen: 0
+  Notebook: {fileID: 0}
+--- !u!114 &1611408879399549051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566519662309353887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c845f48efb8214cbc3b96bdbeee661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  methOnBody: 0
+  LSDOnBody: 0
+  EcstasyOnBody: 0
+  carryitem: {fileID: 0}
+  carryingObject: {fileID: 0}
+--- !u!114 &3580891924320793451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566519662309353887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65748c05035cf174f939008fc693aeb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoge: {fileID: 0}
+  sellButton: {fileID: 0}
+  newRecipeButton: {fileID: 0}
+  randomRecipe:
+  - {fileID: 11400000, guid: 3874349cbfdf2ea45bbfb216fbfa7a57, type: 2}
+  - {fileID: 11400000, guid: 875c3bfd77d3a8e48bd02acc4f6f28d6, type: 2}
+  - {fileID: 11400000, guid: 8067e27295897e642b8feca7830c3400, type: 2}
+  newRecipe: {fileID: 0}
+  sellDrugs: {fileID: 1611408879399549051}
+  cash: 0
+  dialogeText: {fileID: 0}
+  cashText: {fileID: 0}

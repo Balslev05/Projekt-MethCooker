@@ -9,7 +9,7 @@ public class openNotebook : MonoBehaviour
 {
     public bool NotebookHit = false;
     public bool NotebookOpen = false;
-    public GameObject Notebook;
+    public GameObject NotebookUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,14 +23,14 @@ public class openNotebook : MonoBehaviour
         {
             //Notebook.gameObject.SetActive(true);
             NotebookOpen = true;
-            Notebook.transform.DOLocalMove(new Vector3(0f, -100f, 0f), 1).SetEase(Ease.OutExpo);
+            NotebookUI.transform.DOLocalMove(new Vector3(0f, -100f, 0f), 1).SetEase(Ease.OutExpo);
 
         }
         else if(Input.GetKeyDown(KeyCode.E) && NotebookOpen == true || NotebookOpen == true && NotebookHit == false)
         {
             //Notebook.gameObject.SetActive(false);
             NotebookOpen = false;
-            Notebook.transform.DOLocalMove(new Vector3(0f, -767f, 0f), 1).SetEase(Ease.OutExpo);
+            NotebookUI.transform.DOLocalMove(new Vector3(0f, -767f, 0f), 1).SetEase(Ease.OutExpo);
             
         }
     }
