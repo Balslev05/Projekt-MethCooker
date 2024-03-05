@@ -23,14 +23,14 @@ public class openNotebook : MonoBehaviour
         {
             NotebookOpen = true;
             //Notebook.gameObject.SetActive(true);
-            Notebook.transform.DOMove(new Vector3(0f, -75.25f, 0f), 1).SetEase(Ease.OutExpo);
+            Notebook.transform.DOMove(new Vector3(0f, -100f, 0f), 1).SetEase(Ease.OutExpo);
 
         }
         else if(Input.GetKeyDown(KeyCode.E) && NotebookOpen == true)
         {
             //Notebook.gameObject.SetActive(false);
             NotebookOpen = false;
-            Notebook.transform.DOMove(new Vector3(0f, -409f, 0f), 1).SetEase(Ease.OutExpo);
+            Notebook.transform.DOMove(new Vector3(0f, -767f, 0f), 1).SetEase(Ease.OutExpo);
             
         }
     }
