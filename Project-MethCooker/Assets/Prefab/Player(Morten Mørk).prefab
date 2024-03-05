@@ -60,7 +60,8 @@ MonoBehaviour:
   sprintKey: 304
   jump: 32
   _rb: {fileID: 4128961982107573356}
-  animator: {fileID: 0}
+  animator: {fileID: 2306578774913783758}
+  Kidle: 0
 --- !u!212 &242313807037593485
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -183,7 +184,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.82, y: 2.12}
   m_EdgeRadius: 0
 --- !u!95 &2306578774913783758
 Animator:
