@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class Cooker : MonoBehaviour
 {
     public List<Ingredients> Ingredientsneeded = new();
     public List<Ingredients> currentingredient = new();
-    public float Cookingcounter;
+    public float Cookingtimer;
     public bool Cooking;
 
     public int CookingCondition;
@@ -25,13 +26,14 @@ public class Cooker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Cookingtimer = math.clamp(Cookingtimer ,0, 240);
         if(currentingredient.Count == Ingredientsneeded.Count)
         {
             CheckIfIngredientsIsPresent();
         }
         if (Cooking)
         {
-            Cookingcounter -= Time.deltaTime;
+            Cookingtimer -= Time.deltaTime;
         }
     }
 

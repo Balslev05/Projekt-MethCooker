@@ -6,7 +6,11 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
+    private bool hit = false;
+    public int methOnBody;
     public Ingredients carryitem;
+
+    public GameObject carryingObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +20,12 @@ public class PickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-             
+        if (Input.GetKeyDown(KeyCode.E) && hit == true)
+        {
+            Destroy(carryingObject);
+            methOnBody++;
+        }
+
     }
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -40,6 +49,23 @@ public class PickUp : MonoBehaviour
                 
             }
         }
+        
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Meth"))
+        {
+            carryingObject = other.gameObject;
+            hit = true;
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Meth"))
+        {
+            hit = false;
+        }
+    }
 }
