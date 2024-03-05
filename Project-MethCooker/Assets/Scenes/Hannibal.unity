@@ -3141,7 +3141,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 269758992}
         m_TargetAssemblyTypeName: JesseBehavior, Assembly-CSharp
-        m_MethodName: newRecipePress
+        m_MethodName: NewRecipePress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
