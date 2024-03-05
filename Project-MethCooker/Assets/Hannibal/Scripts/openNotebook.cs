@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
 public class openNotebook : MonoBehaviour
 {
     public bool NotebookHit = false;
@@ -22,6 +23,7 @@ public class openNotebook : MonoBehaviour
         {
             NotebookOpen = true;
             Notebook.gameObject.SetActive(true);
+            
         }
         else if(Input.GetKeyDown(KeyCode.E) && NotebookOpen == true)
         {
