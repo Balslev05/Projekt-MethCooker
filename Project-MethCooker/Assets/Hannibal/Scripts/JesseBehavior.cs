@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Random = Unity.Mathematics.Random;
 
 public class JesseBehavior : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class JesseBehavior : MonoBehaviour
     public GameObject dialoge;
     public GameObject sellButton;
     public GameObject newRecipeButton;
-    public RecipeController randomRecipe;
+    public NoteCreater[] randomRecipe;
+    public RecipeController newRecipe;
     public PickUp sellDrugs;
     public int cash = 0;
     
@@ -32,7 +34,7 @@ public class JesseBehavior : MonoBehaviour
         {
             dialogeOpen = true;
             dialoge.gameObject.SetActive(true);
-            dialogeText.text="Jesse Turquiseman: Yo Mr. Mørk";
+            dialogeText.text="Jesse Cyanman: Yo Mr. Mørk";
             newRecipeButton.gameObject.SetActive(true);
             sellButton.gameObject.SetActive(true);
         }
@@ -68,15 +70,35 @@ public class JesseBehavior : MonoBehaviour
         sellButton.gameObject.SetActive(false);
         if (sellDrugs.methOnBody > 0)
         {
-            dialogeText.text = "Jesse Turquiseman: Thank's Mr. Mørk";
+            dialogeText.text = "Jesse Cyanman: Thank's Mr. Mørk";
             cash += sellDrugs.methOnBody * 100;
             sellDrugs.methOnBody = 0;
 
         }
+        else if (sellDrugs.LSDOnBody > 0)
+        {
+            dialogeText.text = "Jesse Cyanman: Thank's Mr. Mørk";
+            cash += sellDrugs.LSDOnBody * 200;
+            sellDrugs.LSDOnBody = 0;
+        }
+        else if (sellDrugs.EcstasyOnBody > 0)
+        {
+            dialogeText.text = "Jesse Cyanman: Thank's Mr. Mørk";
+            cash += sellDrugs.EcstasyOnBody * 150;
+            sellDrugs.EcstasyOnBody = 0;
+        }
+        else
+        {
+            dialogeText.text = "Sorry Mr. Mørk, you don't have any drugs";
+        }
     }
 
-    public void newRecipePress()
+    public void NewRecipePress()
     {
-        
+        newRecipeButton.gameObject.SetActive(false);
+        sellButton.gameObject.SetActive(false);
+        dialogeText.text = "Here you go Mr. Mørk";
+        int randomNumber = Random.Range(0, randomRecipe.Length);
+        newRecipe.currentNote = randomRecipe[randomNumber];
     }
 }
