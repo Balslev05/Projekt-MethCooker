@@ -9,6 +9,7 @@ TagManager:
   - Drug
   - Cooker
   - Meth
+  - Jesse
   layers:
   - Default
   - TransparentFX
