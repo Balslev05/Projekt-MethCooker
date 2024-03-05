@@ -6,8 +6,12 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    private bool hit = false;
+    private bool MethHit = false;
+    private bool LSDHit = false;
+    private bool EcstasyHit = false;
     public int methOnBody;
+    public int LSDOnBody;
+    public int EcstasyOnBody;
     public Ingredients carryitem;
 
     public GameObject carryingObject;
@@ -20,11 +24,22 @@ public class PickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && hit == true)
+        if (Input.GetKeyDown(KeyCode.E) && MethHit == true)
         {
             Destroy(carryingObject);
             methOnBody++;
         }
+        if (Input.GetKeyDown(KeyCode.E) && LSDHit == true)
+        {
+            Destroy(carryingObject);
+            LSDOnBody++;
+        }
+        if (Input.GetKeyDown(KeyCode.E) && EcstasyHit == true)
+        {
+            Destroy(carryingObject);
+            EcstasyOnBody++;
+        }
+        
 
     }
     private void OnTriggerStay2D(Collider2D other)
@@ -57,7 +72,17 @@ public class PickUp : MonoBehaviour
         if (other.gameObject.CompareTag("Meth"))
         {
             carryingObject = other.gameObject;
-            hit = true;
+            MethHit = true;
+        }
+        if (other.gameObject.CompareTag("LSD"))
+        {
+            carryingObject = other.gameObject;
+            LSDHit = true;
+        }
+        if (other.gameObject.CompareTag("Ecstasy"))
+        {
+            carryingObject = other.gameObject;
+            EcstasyHit = true;
         }
     }
 
@@ -65,7 +90,15 @@ public class PickUp : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Meth"))
         {
-            hit = false;
+            MethHit = false;
+        }
+        if (other.gameObject.CompareTag("LSD"))
+        {
+            LSDHit = false;
+        }
+        if (other.gameObject.CompareTag("Ecstasy"))
+        {
+            EcstasyHit = false;
         }
     }
 }
