@@ -32,11 +32,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator animator;
    
     private float startSpeed;
+    
+    private bool _isFacingRight;
     private bool sprinting = false;
+    private bool CanStand = false;
+    
+    
     private Vector2 _movement;
     private Vector2 _lastDirection;
     private Vector2 normalSize;
-
     
     void Start()
     {
@@ -49,10 +53,24 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Flip();
         JumpFall();
         Sprint();
         Move();
     }
+    
+    private void Flip()
+    {
+        if (_isFacingRight && _movement.x < 0f || !_isFacingRight && _movement.x > 0f && !jumping)
+        {
+            Vector2 localScale = transform.localScale;
+            _isFacingRight = !_isFacingRight;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
+    }
+    
+    
     public void Move()
     {
         Vector2 dir = _rb.transform.position - transform.position;
@@ -66,8 +84,18 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
+
+        if (_rb.velocity != new Vector2(0,0))
+        {
+            animator.Play("Walk");
+            print("Moving");
+        }
+        else
+        {
+            animator.Play("Idle");
+            print("standing still");
+        }
         
-        animator.Play("Walk");
         
         _rb.velocity = new Vector2((_movement.x * speed),(_movement.y * speed));
     }
@@ -94,25 +122,31 @@ public class PlayerMovement : MonoBehaviour
     }
     public void JumpFall()
     {
-        if (Input.GetKeyDown(jump))
+        if (Input.GetKeyDown(jump) && !jumping)
         {
+            CanStand = false;
             jumping = true;
             _rb.velocity *= jumpForce;
             animator.Play("Jump");
+            
+            Invoke(nameof(CanStandUp),1);
         }
 
-        if (Input.GetKeyUp(jump))
+        if (!Input.GetKey(jump) && CanStand && jumping)
         {
-            jumping = false;
             animator.Play("StandUp");
+            
+            Invoke(nameof(StandingUp),0.5f);
         }
     }
-
-    public void StandUp()
+    public void StandingUp()
     {
-        
+        jumping = false;
     }
-
+    public void CanStandUp()
+    {
+        CanStand = true;
+    }
     private void FixedUpdate()
     {
         if (jumping)
