@@ -28,9 +28,11 @@ public class PlayerMovement : MonoBehaviour
     
     [Header("Assignebels")]
     [SerializeField] private Rigidbody2D _rb;
-
     [SerializeField] private Animator animator;
-   
+
+
+    [Header("Outfit")] 
+    public bool Kidle;
     private float startSpeed;
     
     private bool _isFacingRight;
@@ -85,14 +87,25 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (_rb.velocity != new Vector2(0,0))
+        if (_rb.velocity != new Vector2(0,0) && !Kidle)
         {
             animator.Play("Walk");
             print("Moving");
         }
-        else
+        else if (_rb.velocity == new Vector2(0,0) && !Kidle)
         {
             animator.Play("Idle");
+            print("standing still");
+        }
+        
+        if (_rb.velocity != new Vector2(0,0) && Kidle)
+        {
+            animator.Play("KidleWalk");
+            print("Moving");
+        }
+        else if (_rb.velocity == new Vector2(0,0) && Kidle)
+        {
+            animator.Play("KidleIdle");
             print("standing still");
         }
         
@@ -122,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void JumpFall()
     {
-        if (Input.GetKeyDown(jump) && !jumping)
+        if (Input.GetKeyDown(jump) && !jumping && !Kidle)
         {
             CanStand = false;
             jumping = true;
@@ -132,9 +145,27 @@ public class PlayerMovement : MonoBehaviour
             Invoke(nameof(CanStandUp),1);
         }
 
-        if (!Input.GetKey(jump) && CanStand && jumping)
+        if (!Input.GetKey(jump) && CanStand && jumping && !Kidle)
         {
             animator.Play("StandUp");
+            
+            Invoke(nameof(StandingUp),0.5f);
+        }
+        
+        
+        if (Input.GetKeyDown(jump) && !jumping && Kidle)
+        {
+            CanStand = false;
+            jumping = true;
+            _rb.velocity *= jumpForce;
+            animator.Play("KildleJump");
+            
+            Invoke(nameof(CanStandUp),1);
+        }
+
+        if (!Input.GetKey(jump) && CanStand && jumping && Kidle)
+        {
+            animator.Play("StandUpKilde");
             
             Invoke(nameof(StandingUp),0.5f);
         }
@@ -152,6 +183,21 @@ public class PlayerMovement : MonoBehaviour
         if (jumping)
         {
             _rb.velocity *= jumpDamping;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Kidle"))
+        {
+            if (Kidle)
+            {
+                Kidle = false;
+                return;
+            }
+            if(!Kidle)
+            {
+                Kidle = true;
+            }
         }
     }
 }
