@@ -66,8 +66,10 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
+        
+        animator.Play("Walk");
+        
         _rb.velocity = new Vector2((_movement.x * speed),(_movement.y * speed));
-        animator.SetBool("Walking",true);
     }
     public void Sprint()
     {
@@ -95,10 +97,14 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(jump))
         {
             jumping = true;
-            animator.SetBool("Walking",false);
-            animator.SetBool("Jumping",true);
-            
             _rb.velocity *= jumpForce;
+            animator.Play("Jump");
+        }
+
+        if (Input.GetKeyUp(jump))
+        {
+            jumping = false;
+            animator.Play("StandUp");
         }
     }
 
