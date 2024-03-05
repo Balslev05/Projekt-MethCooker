@@ -55,8 +55,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Flip();
         JumpFall();
+        if (jumping)
+        {
+            return;
+        }
+        Flip();
         Sprint();
         Move();
     }
@@ -82,10 +86,7 @@ public class PlayerMovement : MonoBehaviour
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
 
-        if (jumping)
-        {
-            return;
-        }
+       
 
         if (_rb.velocity != new Vector2(0,0) && !Kidle)
         {

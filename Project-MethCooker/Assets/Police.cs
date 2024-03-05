@@ -19,10 +19,6 @@ public class Police : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-       
-    }
     void PolicePatroel()
     {
         if (Morten.jumping == false)
