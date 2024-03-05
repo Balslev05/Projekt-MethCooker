@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = Unity.Mathematics.Random;
 
 public class Cooker : MonoBehaviour
 {
+    public GameObject Meth;
+    public GameObject LSD;
+    public GameObject Ecstasy;
     public List<Ingredients> Ingredientsneeded = new();
     public List<Ingredients> currentingredient = new();
     public float Cookingtimer;
@@ -15,7 +19,8 @@ public class Cooker : MonoBehaviour
     
     //public Ingredients[] Ingredientsneeded = new Ingredients[10];
     public NoteCreater CurrentNote;
-
+    private NoteCreater noteLastFrame;
+    public RecipeController recipe;
     private Ingredients addIngrediant;
     // Start is called before the first frame update
     void Start()
@@ -23,10 +28,12 @@ public class Cooker : MonoBehaviour
         UpdateIngrediants();        
     }
 
+     
     // Update is called once per frame
     void Update()
     {
-        Cookingtimer = math.clamp(Cookingtimer ,0, 240);
+        CurrentNote = recipe.currentNote;
+        Cookingtimer = math.clamp(Cookingtimer ,0, 90);
         if(currentingredient.Count == Ingredientsneeded.Count)
         {
             CheckIfIngredientsIsPresent();
@@ -35,12 +42,24 @@ public class Cooker : MonoBehaviour
         {
             Cookingtimer -= Time.deltaTime;
         }
+
+        if (noteLastFrame != CurrentNote)
+        {
+            UpdateIngrediants();
+        }
+        noteLastFrame = CurrentNote;
+        if (CurrentNote.NameOfDrug == "Ecstasy")
+        {
+            Debug.Log("Ecstasy spawned");
+        }
     }
 
     public void UpdateIngrediants()
     {
+        Ingredientsneeded.Clear();
         for (int i = 0; i < CurrentNote.NamesOfIngrdients.Length; i++)
         {
+            
             Ingredientsneeded.Add(CurrentNote.NamesOfIngrdients[i]);   
         }
     }

@@ -53,15 +53,11 @@ public class PickUp : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Cooker"))
         {
-            if (!Input.GetKey(KeyCode.E)) 
+            Cooker cookerCollied = other.GetComponent<Cooker>();
+            if (cookerCollied.currentingredient.Contains(carryitem) == false && carryitem != null)
             {
-                Cooker cookerCollied = other.GetComponent<Cooker>();
-                if (cookerCollied.currentingredient.Contains(carryitem) == false)
-                {
-                    cookerCollied.currentingredient.Add(carryitem);
-                    carryitem = null;
-                }
-                
+                cookerCollied.currentingredient.Add(carryitem);
+                carryitem = null;
             }
         }
         
