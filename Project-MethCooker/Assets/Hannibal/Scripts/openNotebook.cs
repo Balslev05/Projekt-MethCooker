@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using DG.Tweening;
 
 public class openNotebook : MonoBehaviour
 {
@@ -21,12 +22,16 @@ public class openNotebook : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && NotebookOpen == false && NotebookHit == true)
         {
             NotebookOpen = true;
-            Notebook.gameObject.SetActive(true);
+            //Notebook.gameObject.SetActive(true);
+            Notebook.transform.DOMove(new Vector3(0f, -75.25f, 0f), 1).SetEase(Ease.OutExpo);
+
         }
         else if(Input.GetKeyDown(KeyCode.E) && NotebookOpen == true)
         {
-            Notebook.gameObject.SetActive(false);
+            //Notebook.gameObject.SetActive(false);
             NotebookOpen = false;
+            Notebook.transform.DOMove(new Vector3(0f, -409f, 0f), 1).SetEase(Ease.OutExpo);
+            
         }
     }
 
