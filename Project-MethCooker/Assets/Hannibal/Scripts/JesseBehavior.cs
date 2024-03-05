@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Random = Unity.Mathematics.Random;
 
 public class JesseBehavior : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class JesseBehavior : MonoBehaviour
     public GameObject sellButton;
     public GameObject newRecipeButton;
     public NoteCreater[] randomRecipe;
+    public RecipeController newRecipe;
     public PickUp sellDrugs;
     public int cash = 0;
     
@@ -91,11 +93,12 @@ public class JesseBehavior : MonoBehaviour
         }
     }
 
-    public void newRecipePress()
+    public void NewRecipePress()
     {
         newRecipeButton.gameObject.SetActive(false);
         sellButton.gameObject.SetActive(false);
         dialogeText.text = "Here you go Mr. Mørk";
-        
+        int randomNumber = Random.Range(0, randomRecipe.Length);
+        newRecipe.currentNote = randomRecipe[randomNumber];
     }
 }
