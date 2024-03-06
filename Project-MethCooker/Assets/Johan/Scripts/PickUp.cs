@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,6 +14,10 @@ public class PickUp : MonoBehaviour
     public int LSDOnBody;
     public int EcstasyOnBody;
     public Ingredients carryitem;
+    private bool hit = false;
+    [SerializeField] private TextMeshProUGUI ColideWith;
+    public GameObject colide;
+    [SerializeField] private TextMeshProUGUI CurrentlyHolding;
 
     public GameObject carryingObject;
     // Start is called before the first frame update
@@ -39,7 +44,18 @@ public class PickUp : MonoBehaviour
             Destroy(carryingObject);
             EcstasyOnBody++;
         }
-        
+
+        if (hit == true)
+        {
+            ColideWith.gameObject.SetActive(true);
+            ColideWith.text = colide.name;
+        }
+        else
+        {
+            ColideWith.gameObject.SetActive(false);
+        }
+
+        CurrentlyHolding.text = "Currently Holding " + carryitem.name;
 
     }
     private void OnTriggerStay2D(Collider2D other)
@@ -65,6 +81,11 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other)
+        {
+            hit = true;
+            colide = other.gameObject;
+        }
         if (other.gameObject.CompareTag("Meth"))
         {
             carryingObject = other.gameObject;
@@ -84,6 +105,10 @@ public class PickUp : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D other)
     {
+        if (other)
+        {
+            hit = false;
+        }
         if (other.gameObject.CompareTag("Meth"))
         {
             MethHit = false;

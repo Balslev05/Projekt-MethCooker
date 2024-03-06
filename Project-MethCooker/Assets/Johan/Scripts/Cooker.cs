@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -16,7 +17,7 @@ public class Cooker : MonoBehaviour
     public bool Cooking;
     public Progressbar progress;
     public int CookingCondition;
-    
+    public GameObject spawnPoint;
     //public Ingredients[] Ingredientsneeded = new Ingredients[10];
     public NoteCreater CurrentNote;
     private NoteCreater noteLastFrame;
@@ -51,18 +52,21 @@ public class Cooker : MonoBehaviour
         noteLastFrame = CurrentNote;
         if (CurrentNote.NameOfDrug == "Ecstasy" && Cookingtimer <= 0 && Cooking)
         {
-            reset();
             Debug.Log("Ecstasy spawned");
+            Instantiate(Ecstasy,spawnPoint.transform.position,Quaternion.identity);
+            Invoke(nameof(reset), 0.2f);
         }
         else if (CurrentNote.NameOfDrug == "Meth" && Cookingtimer <= 0 && Cooking)
         {
-            reset();
             Debug.Log("Meth spawned");
+            Instantiate(Meth,spawnPoint.transform.position,Quaternion.identity);
+            Invoke(nameof(reset),0.2f);
         }
         else if (CurrentNote.NameOfDrug == "LSD" && Cookingtimer <= 0 && Cooking)
         {
-            reset();
             Debug.Log("LSD spawned");
+            Instantiate(LSD,spawnPoint.transform.position,Quaternion.identity);
+            Invoke(nameof(reset),0.2f);
         }
       
     }
@@ -81,7 +85,9 @@ public class Cooker : MonoBehaviour
         Cookingtimer = CurrentNote.cookingTimer;
         Cooking = false;
         currentingredient.Clear();
+        
         progress.current = 0;
+        Debug.Log("progress = 0");
     }
 
     public void CheckIfIngredientsIsPresent()
