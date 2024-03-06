@@ -10,9 +10,11 @@ using Random = UnityEngine.Random;
 
 public class Police : MonoBehaviour
 {
-    [Header("Assignebel")]
+    [Header("Assignebel")] 
+    public AudioSource sirens;
     public PlayerMovement Morten;
     public Repetation Morten_trust;
+    
     [Header("Stats")]
     public float policetimer;
     public float carSpeed;
@@ -32,18 +34,18 @@ public class Police : MonoBehaviour
     [SerializeField] private float caughtTimer;
     [SerializeField] private bool caught;
     
+    private float sirensMaxSound = 1;
     private bool _scouting;
     private bool _running = false;
     // Start is called before the first frame update
     private void Awake()
     {
         StartPos = gameObject.transform.position;
+        sirens.volume = 0;
     }
 
     void Start()
     {
-        policetimer = Random.Range(0, 100);
-        Invoke(nameof(PolicePatroel),policetimer);
         transform.position = StartPos;
         timer = Random.Range(min_T,max_T);
         if (!_running)
@@ -60,21 +62,26 @@ public class Police : MonoBehaviour
     // Update is called once per frame
     IEnumerator PolicePatroel()
     {
+        //inden den kommer
+        caughtTimer = 0;
         _running = true;
         caught = false;
-        
         yield return new WaitForSeconds(timer + carSpeed);
+        
+        //kommer frem og holder
+        DOTween.To(() => sirens.volume, x => sirens.volume = x, sirensMaxSound, carSpeed).SetEase(Ease.OutExpo);
         gameObject.transform.DOLocalMove(PointA.transform.position, carSpeed).SetEase(Ease.OutExpo);
         _scouting = true;
-        
         yield return new WaitForSeconds(ScoutingTimer + carSpeed);
         
+        // kør væk
         gameObject.transform.DOLocalMove(PointB.transform.position, carSpeed).SetEase(Ease.OutExpo);
-        
+        caughtTimer = 0;
+        DOTween.To(() => sirens.volume, x => sirens.volume = x, 0, carSpeed).SetEase(Ease.OutExpo);
         yield return new WaitForSeconds(1 + carSpeed);
         
+        //efter den er kørt
         _scouting = false;
-        caughtTimer = 0;
         _running = false;
         Start();
     }
