@@ -81,7 +81,7 @@ public class Cooker : MonoBehaviour
         Cookingtimer = CurrentNote.cookingTimer;
         Cooking = false;
         currentingredient.Clear();
-        progress.current = 0;s
+        progress.current = 0;
     }
 
     public void CheckIfIngredientsIsPresent()
