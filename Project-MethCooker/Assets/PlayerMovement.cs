@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     
     [Header("SprintStats")]
     public float sprintSpeed;
-    public float sprintCooldown;
     public float maxStamina;
     public float currentStamina;
     
@@ -26,8 +25,6 @@ public class PlayerMovement : MonoBehaviour
     public bool jumping;
     public float jumpForce;
     public float jumpDamping;
-    public Vector2 jumpScale;
-    
     
     [Header("Inputs")]
     public KeyCode sprintKey = KeyCode.LeftShift;
@@ -38,12 +35,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject dust;
     [SerializeField] private GameObject belly;
+    [SerializeField] private GameObject dust2;
+    [SerializeField] private GameObject feet;
+
 
 
     [Header("Outfit")] 
     public bool Kidle;
-    private float startSpeed;
     
+    
+    
+    private float startSpeed;
     private bool _isFacingRight;
     private bool sprinting = false;
     private bool CanStand = false;
@@ -147,6 +149,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(jump) && !jumping && !Kidle)
         {
+            GameObject Insdust2 = Instantiate(dust2, feet.transform.position, quaternion.identity);
+            Destroy(Insdust2,2);
+
             CanStand = false;
             jumping = true;
             _rb.velocity *= jumpForce;
@@ -165,6 +170,9 @@ public class PlayerMovement : MonoBehaviour
         
         if (Input.GetKeyDown(jump) && !jumping && Kidle)
         {
+            GameObject Insdust2 = Instantiate(dust2,feet.transform.position,quaternion.identity);
+            Destroy(Insdust2,2);
+
             CanStand = false;
             jumping = true;
             _rb.velocity *= jumpForce;
@@ -193,6 +201,7 @@ public class PlayerMovement : MonoBehaviour
     {
         GameObject Insdust = Instantiate(dust,belly.transform.position,quaternion.identity);
         Destroy(Insdust,2);
+
     }
     private void FixedUpdate()
     {
