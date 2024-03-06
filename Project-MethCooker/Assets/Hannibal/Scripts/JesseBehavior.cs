@@ -14,6 +14,7 @@ public class JesseBehavior : MonoBehaviour
     public GameObject newRecipeButton;
     public NoteCreater[] randomRecipe;
     public RecipeController newRecipe;
+    private RecipeController currentRecipe;
     public PickUp sellDrugs;
     public int cash = 0;
     
@@ -95,10 +96,17 @@ public class JesseBehavior : MonoBehaviour
 
     public void NewRecipePress()
     {
+        //currentRecipe = newRecipe;
         newRecipeButton.gameObject.SetActive(false);
         sellButton.gameObject.SetActive(false);
         dialogeText.text = "Here you go Mr. Mørk";
         int randomNumber = Random.Range(0, randomRecipe.Length);
+
+        NoteCreater currentNote = newRecipe.currentNote;
+        while (randomRecipe[randomNumber] == currentNote)
+        {
+            randomNumber = Random.Range(0, randomRecipe.Length);
+        }
         newRecipe.currentNote = randomRecipe[randomNumber];
     }
 }
