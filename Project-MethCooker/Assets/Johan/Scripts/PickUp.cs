@@ -37,7 +37,6 @@ public class PickUp : MonoBehaviour
         else
         {
             CurrentlyHolding.text = "Currently Holding ";
-            
         }
         if (Input.GetKeyDown(KeyCode.E) && MethHit == true)
         {

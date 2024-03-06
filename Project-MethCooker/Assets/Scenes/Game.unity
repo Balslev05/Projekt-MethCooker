@@ -351,8 +351,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.1275, y: 1.6313, z: 0}
-    m_Extent: {x: 1.3564, y: 2.6377, z: 0}
+    m_Center: {x: 0.11475003, y: 1.6329501, z: 0}
+    m_Extent: {x: 1.35945, y: 2.6333501, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -821,6 +821,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Student
       objectReference: {fileID: 0}
+    - target: {fileID: 2470761253000939665, guid: 42b11352fb70d1941ab80591f9e7a2bf, type: 3}
+      propertyPath: m_Color.b
+      value: 0.94830513
+      objectReference: {fileID: 0}
+    - target: {fileID: 2470761253000939665, guid: 42b11352fb70d1941ab80591f9e7a2bf, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2470761253000939665, guid: 42b11352fb70d1941ab80591f9e7a2bf, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4013273285008761815, guid: 42b11352fb70d1941ab80591f9e7a2bf, type: 3}
       propertyPath: "udr\xE5bstegn"
       value: 
@@ -1239,6 +1251,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1611408879399549051, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3580891924320793451, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
       propertyPath: dialoge
       value: 
@@ -1323,6 +1339,14 @@ PrefabInstance:
       propertyPath: NotebookUI
       value: 
       objectReference: {fileID: 6429515481577987062}
+    - target: {fileID: 8567503644055781990, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 551433662773783381}
+    - target: {fileID: 8567503644055781990, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: fillbar
+      value: 
+      objectReference: {fileID: 6182365458854341475}
     - target: {fileID: 8794824787843077507, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
       propertyPath: dust
       value: 
@@ -1360,16 +1384,8 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6777365946471703171, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 101004181}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 566519662309353887, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1628555202}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
---- !u!1 &1208540874 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 566519662309353887, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
-  m_PrefabInstance: {fileID: 1208540873}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1269406807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,8 +1452,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.118449986, y: 1.6295999, z: 0}
-    m_Extent: {x: 1.36325, y: 2.6241999, z: 0}
+    m_Center: {x: 0.12004995, y: 1.6303, z: 0}
+    m_Extent: {x: 1.35385, y: 2.6297002, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1640,7 +1656,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8794824787843077507, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
   m_PrefabInstance: {fileID: 1208540873}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208540874}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4337961e5dafa52488fcade98dfe03b4, type: 3}
@@ -1651,22 +1667,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6777365946471703171, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
   m_PrefabInstance: {fileID: 1208540873}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1628555202
+--- !u!114 &1628555202 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8567503644055781990, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+  m_PrefabInstance: {fileID: 1208540873}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208540874}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 128554840cca67940ab759bb9ec5d204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTrust: 10
-  currentTrust: 0
-  fillbar: {fileID: 6182365458854341475}
-  slider: {fileID: 551433662773783381}
 --- !u!1 &1637496711
 GameObject:
   m_ObjectHideFlags: 0

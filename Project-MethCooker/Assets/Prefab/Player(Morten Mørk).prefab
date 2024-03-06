@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7609272516173923213}
   - component: {fileID: 1611408879399549051}
   - component: {fileID: 3580891924320793451}
+  - component: {fileID: 8567503644055781990}
   m_Layer: 0
   m_Name: "Player(Morten M\xF8rk)"
   m_TagString: Untagged
@@ -52,18 +53,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  currentSpeed: 0
+  acceleration: 0
   sprintSpeed: 20
-  sprintCooldown: 0
   maxStamina: 3
   currentStamina: 0
   jumping: 0
   jumpForce: 5
   jumpDamping: 0.91
-  jumpScale: {x: 0, y: 0}
   sprintKey: 304
   jump: 32
   _rb: {fileID: 4128961982107573356}
   animator: {fileID: 2306578774913783758}
+  dust: {fileID: 0}
+  belly: {fileID: 0}
+  dust2: {fileID: 0}
+  feet: {fileID: 0}
   Kidle: 0
 --- !u!212 &242313807037593485
 SpriteRenderer:
@@ -224,7 +229,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NotebookHit: 0
   NotebookOpen: 0
-  Notebook: {fileID: 0}
+  NotebookUI: {fileID: 0}
+  startpos: {x: 0, y: 0, z: 0}
 --- !u!114 &1611408879399549051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +247,10 @@ MonoBehaviour:
   LSDOnBody: 0
   EcstasyOnBody: 0
   carryitem: {fileID: 0}
+  ColideWith: {fileID: 0}
+  colide: {fileID: 0}
+  CurrentlyHolding: {fileID: 0}
+  cooker: {fileID: 0}
   carryingObject: {fileID: 0}
 --- !u!114 &3580891924320793451
 MonoBehaviour:
@@ -266,3 +276,19 @@ MonoBehaviour:
   cash: 0
   dialogeText: {fileID: 0}
   cashText: {fileID: 0}
+--- !u!114 &8567503644055781990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566519662309353887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128554840cca67940ab759bb9ec5d204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTrust: 10
+  currentTrust: 0
+  fillbar: {fileID: 0}
+  slider: {fileID: 0}
