@@ -156,6 +156,10 @@ PrefabInstance:
       value: "Player(Morten M\xF8rk)"
       objectReference: {fileID: 0}
     - target: {fileID: 1611408879399549051, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: cooker
+      value: 
+      objectReference: {fileID: 1745870824}
+    - target: {fileID: 1611408879399549051, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
       propertyPath: ColideWith
       value: 
       objectReference: {fileID: 1483474513}
@@ -1487,6 +1491,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1745870825}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1745870824 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3867354818982688629, guid: 34b894dbfe4388b458032eeb39846563, type: 3}
+  m_PrefabInstance: {fileID: 1434245093}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6be6f95a611e194497455a0ae6a7d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1745870825 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8743838747929664988, guid: 34b894dbfe4388b458032eeb39846563, type: 3}
@@ -2047,6 +2062,14 @@ PrefabInstance:
     - target: {fileID: 6515340212182509370, guid: 546d49665f6d82d4ea82cb31b4ec1f18, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762989680084092416, guid: 546d49665f6d82d4ea82cb31b4ec1f18, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762989680084092416, guid: 546d49665f6d82d4ea82cb31b4ec1f18, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9172889450757028959, guid: 546d49665f6d82d4ea82cb31b4ec1f18, type: 3}
       propertyPath: m_Pivot.x

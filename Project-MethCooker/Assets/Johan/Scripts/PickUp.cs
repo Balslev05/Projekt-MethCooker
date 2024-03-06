@@ -18,6 +18,7 @@ public class PickUp : MonoBehaviour
     [SerializeField] private TextMeshProUGUI ColideWith;
     public GameObject colide;
     [SerializeField] private TextMeshProUGUI CurrentlyHolding;
+    public Cooker cooker;
 
     public GameObject carryingObject;
     // Start is called before the first frame update
@@ -29,6 +30,15 @@ public class PickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (carryitem != null)
+        {
+            CurrentlyHolding.text = "Currently Holding " + carryitem.name;
+        }
+        else
+        {
+            CurrentlyHolding.text = "Currently Holding ";
+            
+        }
         if (Input.GetKeyDown(KeyCode.E) && MethHit == true)
         {
             Destroy(carryingObject);
@@ -55,7 +65,7 @@ public class PickUp : MonoBehaviour
             ColideWith.gameObject.SetActive(false);
         }
 
-        CurrentlyHolding.text = "Currently Holding " + carryitem.name;
+        
 
     }
     private void OnTriggerStay2D(Collider2D other)
@@ -75,6 +85,11 @@ public class PickUp : MonoBehaviour
                 cookerCollied.currentingredient.Add(carryitem);
                 carryitem = null;
             }
+        }
+
+        if (other.gameObject.CompareTag("Cooker") && Input.GetKeyDown(KeyCode.E))
+        {
+            cooker.currentingredient.Clear();
         }
         
     }

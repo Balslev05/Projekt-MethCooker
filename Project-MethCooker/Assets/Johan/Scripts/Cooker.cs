@@ -53,20 +53,23 @@ public class Cooker : MonoBehaviour
         if (CurrentNote.NameOfDrug == "Ecstasy" && Cookingtimer <= 0 && Cooking)
         {
             Debug.Log("Ecstasy spawned");
-            Instantiate(Ecstasy,spawnPoint.transform.position,Quaternion.identity);
+            Cooking = false;
             Invoke(nameof(reset), 0.2f);
+            Instantiate(Ecstasy,spawnPoint.transform.position,Quaternion.identity);
         }
         else if (CurrentNote.NameOfDrug == "Meth" && Cookingtimer <= 0 && Cooking)
         {
             Debug.Log("Meth spawned");
-            Instantiate(Meth,spawnPoint.transform.position,Quaternion.identity);
+            Cooking = false;
             Invoke(nameof(reset),0.2f);
+            Instantiate(Meth,spawnPoint.transform.position,Quaternion.identity);
         }
         else if (CurrentNote.NameOfDrug == "LSD" && Cookingtimer <= 0 && Cooking)
         {
             Debug.Log("LSD spawned");
-            Instantiate(LSD,spawnPoint.transform.position,Quaternion.identity);
+            Cooking = false;
             Invoke(nameof(reset),0.2f);
+            Instantiate(LSD,spawnPoint.transform.position,Quaternion.identity);
         }
       
     }
@@ -83,7 +86,6 @@ public class Cooker : MonoBehaviour
     private void reset()
     {
         Cookingtimer = CurrentNote.cookingTimer;
-        Cooking = false;
         currentingredient.Clear();
         
         progress.current = 0;
