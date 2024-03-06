@@ -25,7 +25,8 @@ public class Cooker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateIngrediants();        
+        UpdateIngrediants();
+        Cookingtimer = CurrentNote.cookingTimer;
     }
 
      
@@ -42,15 +43,30 @@ public class Cooker : MonoBehaviour
         {
             Cookingtimer -= Time.deltaTime;
         }
-
         if (noteLastFrame != CurrentNote)
         {
             UpdateIngrediants();
+            Cookingtimer = CurrentNote.cookingTimer;
         }
         noteLastFrame = CurrentNote;
-        if (CurrentNote.NameOfDrug == "Ecstasy")
+        if (CurrentNote.NameOfDrug == "Ecstasy" && Cookingtimer <= 0)
         {
+            Cooking = false;
             Debug.Log("Ecstasy spawned");
+        }
+        else if (CurrentNote.NameOfDrug == "Meth" && Cookingtimer <= 0)
+        {
+            Cooking = false;
+            Debug.Log("Meth spawned");
+        }
+        else if (CurrentNote.NameOfDrug == "LSD" && Cookingtimer <= 0)
+        {
+            Cooking = false;
+            Debug.Log("LSD spawned");
+        }
+        if (Cooking == false)
+        {
+            
         }
     }
 
@@ -59,7 +75,6 @@ public class Cooker : MonoBehaviour
         Ingredientsneeded.Clear();
         for (int i = 0; i < CurrentNote.NamesOfIngrdients.Length; i++)
         {
-            
             Ingredientsneeded.Add(CurrentNote.NamesOfIngrdients[i]);   
         }
     }
