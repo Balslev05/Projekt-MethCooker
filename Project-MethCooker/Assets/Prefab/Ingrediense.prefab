@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9185491831003775150}
-  - component: {fileID: 7590880182783395528}
+  - component: {fileID: 2119419922475549958}
   m_Layer: 0
   m_Name: Ingrediense
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7590880182783395528
+--- !u!114 &2119419922475549958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1551147948613477374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7506d4d12204a5488647bb8d5fce972, type: 3}
+  m_Script: {fileID: 11500000, guid: d10e1b094c2ada74fab0d2e47110aaf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ingredients: {fileID: 0}
+  Drugs: {fileID: 0}

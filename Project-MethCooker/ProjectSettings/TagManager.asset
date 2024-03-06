@@ -13,6 +13,7 @@ TagManager:
   - LSD
   - Ecstasy
   - Kidle
+  - Items
   layers:
   - Default
   - TransparentFX

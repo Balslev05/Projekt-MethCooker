@@ -32,7 +32,9 @@ public class Students : MonoBehaviour
         {
             handisraised = true;
             Debug.Log("Hej");
+            
         }
+
        
     }
 }
