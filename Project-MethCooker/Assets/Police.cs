@@ -10,7 +10,7 @@ public class Police : MonoBehaviour
     public string levelname;
     public PlayerMovement Morten;
     public float policetimer;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,10 @@ public class Police : MonoBehaviour
     }
 
     // Update is called once per frame
+    void Update()
+    {
+       
+    }
     void PolicePatroel()
     {
         if (Morten.jumping == false)

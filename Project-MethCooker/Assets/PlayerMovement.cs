@@ -6,16 +6,23 @@ using Unity.Mathematics;
 using UnityEditor.Rendering.Universal;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
+using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Stats")]
+    [Header("WalkStats")] 
     public float speed;
+    public float currentSpeed;
+    public float acceleration;
+    
+    [Header("SprintStats")]
     public float sprintSpeed;
     public float sprintCooldown;
     public float maxStamina;
     public float currentStamina;
     
+    [Header("JumpStats")]
     public bool jumping;
     public float jumpForce;
     public float jumpDamping;
@@ -29,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Assignebels")]
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject dust;
+    [SerializeField] private GameObject belly;
 
 
     [Header("Outfit")] 
@@ -48,16 +57,16 @@ public class PlayerMovement : MonoBehaviour
     {
         normalSize = transform.localScale;
         currentStamina = maxStamina;
-        startSpeed = speed;
+        startSpeed = currentSpeed;
         _rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_rb.velocity.magnitude > speed)
+        if (_rb.velocity.magnitude > currentSpeed)
         {
-            _rb.velocity = Vector2.ClampMagnitude(_rb.velocity,speed);
+            _rb.velocity = Vector2.ClampMagnitude(_rb.velocity,currentSpeed);
         }
         JumpFall();
         if (jumping)
@@ -89,45 +98,41 @@ public class PlayerMovement : MonoBehaviour
         
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
-
-       
-
+        
         if (_rb.velocity != new Vector2(0,0) && !Kidle)
         {
             animator.Play("Walk");
-            print("Moving");
+
         }
         else if (_rb.velocity == new Vector2(0,0) && !Kidle)
         {
             animator.Play("Idle");
-            print("standing still");
         }
         
         if (_rb.velocity != new Vector2(0,0) && Kidle)
         {
             animator.Play("KidleWalk");
-            print("Moving");
         }
         else if (_rb.velocity == new Vector2(0,0) && Kidle)
         {
             animator.Play("KidleIdle");
-            print("standing still");
         }
         
+        DOTween.To(() => currentSpeed, x => currentSpeed = x, speed,acceleration);
         
-        _rb.velocity = new Vector2((_movement.x * speed),(_movement.y * speed));
+        _rb.velocity = new Vector2((_movement.x * currentSpeed),(_movement.y * currentSpeed));
     }
     public void Sprint()
     {
         if(Input.GetKeyDown(sprintKey) && currentStamina > 0)
         {
-            speed = sprintSpeed;
+            currentSpeed = sprintSpeed;
             sprinting = true;
             currentStamina--;
         }
         if (Input.GetKeyUp(sprintKey))
         {
-            speed = startSpeed;
+            currentSpeed = startSpeed;
             sprinting = false;
         }
         
@@ -142,8 +147,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(jump) && !jumping && !Kidle)
         {
-            jumping = true;
             CanStand = false;
+            jumping = true;
             _rb.velocity *= jumpForce;
             animator.Play("Jump");
             
@@ -154,7 +159,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.Play("StandUp");
             
-            Invoke(nameof(StandingUp),1f);
+            Invoke(nameof(StandingUp),0.5f);
         }
         
         
@@ -182,6 +187,12 @@ public class PlayerMovement : MonoBehaviour
     public void CanStandUp()
     {
         CanStand = true;
+    }
+    
+    public void SpawnDust()
+    {
+        GameObject Insdust = Instantiate(dust,belly.transform.position,quaternion.identity);
+        Destroy(Insdust,2);
     }
     private void FixedUpdate()
     {
