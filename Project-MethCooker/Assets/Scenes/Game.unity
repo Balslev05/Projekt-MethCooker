@@ -351,8 +351,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.11475003, y: 1.6329501, z: 0}
-    m_Extent: {x: 1.35945, y: 2.6333501, z: 0}
+    m_Center: {x: 0.11680001, y: 1.6305001, z: 0}
+    m_Extent: {x: 1.3601999, y: 2.6381, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1252,8 +1252,48 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1611408879399549051, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: colide
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611408879399549051, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: cooker
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611408879399549051, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: LSDOnBody
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611408879399549051, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: carryitem
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611408879399549051, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611408879399549051, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: ColideWith
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611408879399549051, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: methOnBody
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611408879399549051, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: standingOn
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611408879399549051, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: EcstasyOnBody
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611408879399549051, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: carryingObject
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1611408879399549051, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: CurrentlyHolding
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3580891924320793451, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
       propertyPath: dialoge
@@ -1279,6 +1319,14 @@ PrefabInstance:
       propertyPath: newRecipeButton
       value: 
       objectReference: {fileID: 4742470746849351328}
+    - target: {fileID: 4128961982107573356, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128961982107573356, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6777365946471703171, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -1293,11 +1341,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6777365946471703171, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.35
+      value: 5.65
       objectReference: {fileID: 0}
     - target: {fileID: 6777365946471703171, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.19
+      value: 1.26
       objectReference: {fileID: 0}
     - target: {fileID: 6777365946471703171, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1452,8 +1500,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.12004995, y: 1.6303, z: 0}
-    m_Extent: {x: 1.35385, y: 2.6297002, z: 0}
+    m_Center: {x: 0.11950004, y: 1.6306999, z: 0}
+    m_Extent: {x: 1.3514, y: 2.6301, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

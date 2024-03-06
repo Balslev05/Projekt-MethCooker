@@ -20,11 +20,13 @@ public class PlayerMovement : MonoBehaviour
     public float sprintSpeed;
     public float maxStamina;
     public float currentStamina;
-    
+    public float sprintCooldown;
+        
     [Header("JumpStats")]
     public bool jumping;
     public float jumpForce;
     public float jumpDamping;
+    public Vector2 jumpScale;
     
     [Header("Inputs")]
     public KeyCode sprintKey = KeyCode.LeftShift;
@@ -42,10 +44,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Outfit")] 
     public bool Kidle;
-    
-    
-    
     private float startSpeed;
+    
     private bool _isFacingRight;
     private bool sprinting = false;
     private bool CanStand = false;
