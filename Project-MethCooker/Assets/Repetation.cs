@@ -21,6 +21,6 @@ public class Repetation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentTrust = slider.value;
+        slider.value = currentTrust;
     }
 }

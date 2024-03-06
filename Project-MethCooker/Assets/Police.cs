@@ -10,23 +10,27 @@ using Random = UnityEngine.Random;
 
 public class Police : MonoBehaviour
 {
+    [Header("Assignebel")]
     public PlayerMovement Morten;
+    public Repetation Morten_trust;
+    [Header("Stats")]
     public float policetimer;
-    public float CarSpeed;
-
+    public float carSpeed;
+    public float punishment;
     
     [Header("Timers")]
     public float timer;
     public float min_T,max_T;
     public float ScoutingTimer;
     
-    [SerializeField]private float caughtTimer;
     
     [Header("Points")]
     public Transform PointA;
     public Transform PointB;
 
     [SerializeField] private Vector3 StartPos;
+    [SerializeField] private float caughtTimer;
+    [SerializeField] private bool caught;
     
     private bool _scouting;
     private bool _running = false;
@@ -57,15 +61,17 @@ public class Police : MonoBehaviour
     IEnumerator PolicePatroel()
     {
         _running = true;
-        yield return new WaitForSeconds(timer + CarSpeed);
-        gameObject.transform.DOLocalMove(PointA.transform.position, CarSpeed).SetEase(Ease.OutExpo);
+        caught = false;
+        
+        yield return new WaitForSeconds(timer + carSpeed);
+        gameObject.transform.DOLocalMove(PointA.transform.position, carSpeed).SetEase(Ease.OutExpo);
         _scouting = true;
         
-        yield return new WaitForSeconds(ScoutingTimer + CarSpeed);
+        yield return new WaitForSeconds(ScoutingTimer + carSpeed);
         
-        gameObject.transform.DOLocalMove(PointB.transform.position, CarSpeed).SetEase(Ease.OutExpo);
+        gameObject.transform.DOLocalMove(PointB.transform.position, carSpeed).SetEase(Ease.OutExpo);
         
-        yield return new WaitForSeconds(1 + CarSpeed);
+        yield return new WaitForSeconds(1 + carSpeed);
         
         _scouting = false;
         caughtTimer = 0;
@@ -85,13 +91,17 @@ public class Police : MonoBehaviour
             return;
         }
 
-        if (caughtTimer >= 2)
+        if (caughtTimer >= 2 && !caught)
         {
-            print("2");
+            DOTween.To(() => Morten_trust.currentTrust, x => Morten_trust.currentTrust = x, Morten_trust.currentTrust -= punishment,1);
+            caught = true;
         }
-        
-        
-
     }
-    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Morten_trust.currentTrust = 0;
+        }
+    }
 }
