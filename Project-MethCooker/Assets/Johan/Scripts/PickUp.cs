@@ -10,10 +10,13 @@ public class PickUp : MonoBehaviour
     private bool MethHit = false;
     private bool LSDHit = false;
     private bool EcstasyHit = false;
+    private bool drugHit = false;
+    private bool cokkerHit = false;
     public int methOnBody;
     public int LSDOnBody;
     public int EcstasyOnBody;
     public Ingredients carryitem;
+    public Ingredients standingOn;
     private bool hit = false;
     [SerializeField] private TextMeshProUGUI ColideWith;
     public GameObject colide;
@@ -65,19 +68,20 @@ public class PickUp : MonoBehaviour
             ColideWith.gameObject.SetActive(false);
         }
 
-        
+        if (Input.GetKey(KeyCode.E) && drugHit == true)
+        {
+            carryitem = standingOn;
+        }
+
+        if (cokkerHit == hit && Input.GetKeyDown(KeyCode.E))
+        {
+            cooker.currentingredient.Clear();
+        }
 
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Drug"))
-        {
-            if (Input.GetKey(KeyCode.E))
-            {
-                carryitem = other.GetComponent<Item>().Ingredients;
-            }
-        }
-        else if (other.gameObject.CompareTag("Cooker"))
+         if (other.gameObject.CompareTag("Cooker"))
         {
             Cooker cookerCollied = other.GetComponent<Cooker>();
             if (cookerCollied.currentingredient.Contains(carryitem) == false && carryitem != null)
@@ -86,16 +90,21 @@ public class PickUp : MonoBehaviour
                 carryitem = null;
             }
         }
-
-        if (other.gameObject.CompareTag("Cooker") && Input.GetKeyDown(KeyCode.E))
-        {
-            cooker.currentingredient.Clear();
-        }
         
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.CompareTag("Cooker"))
+        {
+            cokkerHit = true;
+        }
+        if (other.gameObject.CompareTag("Drug"))
+        {
+            drugHit = true;
+            standingOn = other.GetComponent<Item>().Ingredients;
+
+        }
         if (other)
         {
             hit = true;
@@ -120,6 +129,14 @@ public class PickUp : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D other)
     {
+        if (other.gameObject.CompareTag("Cooker"))
+        {
+            cokkerHit = false;
+        }
+        if (other.gameObject.CompareTag("Drug"))
+        {
+            drugHit = false;
+        }
         if (other)
         {
             hit = false;
