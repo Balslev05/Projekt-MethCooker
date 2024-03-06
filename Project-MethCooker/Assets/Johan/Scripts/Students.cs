@@ -10,7 +10,7 @@ public class Students : MonoBehaviour
     [Header("Assignebels")]
     public GameObject udråbstegn;
     public Transform targetpostion;
-    
+   
     [Header("stats")]
     public float Studentsraisehands;
     public float Studentlifetime;

@@ -49,11 +49,19 @@ public class PlayerMovement : MonoBehaviour
     private bool _isFacingRight;
     private bool sprinting = false;
     private bool CanStand = false;
-    
+    private bool cutscene = false;
     
     private Vector2 _movement;
     private Vector2 _lastDirection;
     private Vector2 normalSize;
+
+    [Header("AcidSettings")] 
+    public GameObject tavel;
+    public GameObject walkpointsA,walkpointsB;
+    public float WalkSpeed;
+    public 
+    
+    
     
     void Start()
     {
@@ -66,6 +74,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (cutscene)
+        {
+            return;
+        }
+        
         if (_rb.velocity.magnitude > currentSpeed)
         {
             _rb.velocity = Vector2.ClampMagnitude(_rb.velocity,currentSpeed);
@@ -90,8 +103,6 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = localScale;
         }
     }
-    
-    
     public void Move()
     {
         Vector2 dir = _rb.transform.position - transform.position;
@@ -166,8 +177,6 @@ public class PlayerMovement : MonoBehaviour
             
             Invoke(nameof(StandingUp),0.5f);
         }
-        
-        
         if (Input.GetKeyDown(jump) && !jumping && Kidle)
         {
             GameObject Insdust2 = Instantiate(dust2,feet.transform.position,quaternion.identity);
@@ -180,7 +189,6 @@ public class PlayerMovement : MonoBehaviour
             
             Invoke(nameof(CanStandUp),1);
         }
-
         if (!Input.GetKey(jump) && CanStand && jumping && Kidle)
         {
             animator.Play("StandUpKilde");
@@ -196,7 +204,6 @@ public class PlayerMovement : MonoBehaviour
     {
         CanStand = true;
     }
-    
     public void SpawnDust()
     {
         GameObject Insdust = Instantiate(dust,belly.transform.position,quaternion.identity);
@@ -210,6 +217,23 @@ public class PlayerMovement : MonoBehaviour
             _rb.velocity *= jumpDamping;
         }
     }
+
+
+    public IEnumerator AcidScene(GameObject Student)
+    {
+        transform.position = tavel.transform.position;
+        
+        cutscene = true;
+        animator.Play("Walk");
+        transform.DOMove(walkpointsA.transform.position, WalkSpeed).SetEase(Ease.Linear);
+        yield return new WaitForSeconds(WalkSpeed);
+        transform.DOMove(walkpointsB.transform.position, WalkSpeed + 2).SetEase(Ease.Linear);
+        yield return new WaitForSeconds(WalkSpeed + 2.5f);
+        Debug.Log("EndCutscene");
+        
+        cutscene = false;
+
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Kidle"))
@@ -222,6 +246,17 @@ public class PlayerMovement : MonoBehaviour
             if(!Kidle)
             {
                 Kidle = true;
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Student"))
+        {
+            if (other.GetComponent<Students>().handisraised && Input.GetKeyDown(KeyCode.E))
+            {
+                print("StartsDialog");
             }
         }
     }
