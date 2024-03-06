@@ -6,16 +6,23 @@ using Unity.Mathematics;
 using UnityEditor.Rendering.Universal;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
+using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Stats")]
+    [Header("WalkStats")] 
     public float speed;
+    public float currentSpeed;
+    public float acceleration;
+    
+    [Header("SprintStats")]
     public float sprintSpeed;
     public float sprintCooldown;
     public float maxStamina;
     public float currentStamina;
     
+    [Header("JumpStats")]
     public bool jumping;
     public float jumpForce;
     public float jumpDamping;
@@ -28,9 +35,13 @@ public class PlayerMovement : MonoBehaviour
     
     [Header("Assignebels")]
     [SerializeField] private Rigidbody2D _rb;
-
     [SerializeField] private Animator animator;
-   
+    [SerializeField] private GameObject dust;
+    [SerializeField] private GameObject belly;
+
+
+    [Header("Outfit")] 
+    public bool Kidle;
     private float startSpeed;
     
     private bool _isFacingRight;
@@ -46,15 +57,23 @@ public class PlayerMovement : MonoBehaviour
     {
         normalSize = transform.localScale;
         currentStamina = maxStamina;
-        startSpeed = speed;
+        startSpeed = currentSpeed;
         _rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Flip();
+        if (_rb.velocity.magnitude > currentSpeed)
+        {
+            _rb.velocity = Vector2.ClampMagnitude(_rb.velocity,currentSpeed);
+        }
         JumpFall();
+        if (jumping)
+        {
+            return;
+        }
+        Flip();
         Sprint();
         Move();
     }
@@ -79,37 +98,41 @@ public class PlayerMovement : MonoBehaviour
         
         _movement.x = Input.GetAxisRaw("Horizontal");
         _movement.y = Input.GetAxisRaw("Vertical");
-
-        if (jumping)
-        {
-            return;
-        }
-
-        if (_rb.velocity != new Vector2(0,0))
+        
+        if (_rb.velocity != new Vector2(0,0) && !Kidle)
         {
             animator.Play("Walk");
-            print("Moving");
+
         }
-        else
+        else if (_rb.velocity == new Vector2(0,0) && !Kidle)
         {
             animator.Play("Idle");
-            print("standing still");
         }
         
+        if (_rb.velocity != new Vector2(0,0) && Kidle)
+        {
+            animator.Play("KidleWalk");
+        }
+        else if (_rb.velocity == new Vector2(0,0) && Kidle)
+        {
+            animator.Play("KidleIdle");
+        }
         
-        _rb.velocity = new Vector2((_movement.x * speed),(_movement.y * speed));
+        DOTween.To(() => currentSpeed, x => currentSpeed = x, speed,acceleration);
+        
+        _rb.velocity = new Vector2((_movement.x * currentSpeed),(_movement.y * currentSpeed));
     }
     public void Sprint()
     {
         if(Input.GetKeyDown(sprintKey) && currentStamina > 0)
         {
-            speed = sprintSpeed;
+            currentSpeed = sprintSpeed;
             sprinting = true;
             currentStamina--;
         }
         if (Input.GetKeyUp(sprintKey))
         {
-            speed = startSpeed;
+            currentSpeed = startSpeed;
             sprinting = false;
         }
         
@@ -122,7 +145,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void JumpFall()
     {
-        if (Input.GetKeyDown(jump) && !jumping)
+        if (Input.GetKeyDown(jump) && !jumping && !Kidle)
         {
             CanStand = false;
             jumping = true;
@@ -132,11 +155,29 @@ public class PlayerMovement : MonoBehaviour
             Invoke(nameof(CanStandUp),1);
         }
 
-        if (!Input.GetKey(jump) && CanStand && jumping)
+        if (!Input.GetKey(jump) && CanStand && jumping && !Kidle)
         {
             animator.Play("StandUp");
             
             Invoke(nameof(StandingUp),0.5f);
+        }
+        
+        
+        if (Input.GetKeyDown(jump) && !jumping && Kidle)
+        {
+            CanStand = false;
+            jumping = true;
+            _rb.velocity *= jumpForce;
+            animator.Play("KildleJump");
+            
+            Invoke(nameof(CanStandUp),1);
+        }
+
+        if (!Input.GetKey(jump) && CanStand && jumping && Kidle)
+        {
+            animator.Play("StandUpKilde");
+            
+            Invoke(nameof(StandingUp),1f);
         }
     }
     public void StandingUp()
@@ -147,11 +188,32 @@ public class PlayerMovement : MonoBehaviour
     {
         CanStand = true;
     }
+    
+    public void SpawnDust()
+    {
+        GameObject Insdust = Instantiate(dust,belly.transform.position,quaternion.identity);
+        Destroy(Insdust,2);
+    }
     private void FixedUpdate()
     {
         if (jumping)
         {
             _rb.velocity *= jumpDamping;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Kidle"))
+        {
+            if (Kidle)
+            {
+                Kidle = false;
+                return;
+            }
+            if(!Kidle)
+            {
+                Kidle = true;
+            }
         }
     }
 }

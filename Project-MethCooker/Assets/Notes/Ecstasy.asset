@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameOfDrug: Ecstasy
   NamesOfIngrdients:
-  - {fileID: 11400000, guid: 9ab03ff3f30a8174b9fdf3ea6eca497f, type: 2}
   - {fileID: 11400000, guid: b92fa42921684bc4cadcc98d776ef119, type: 2}
   - {fileID: 11400000, guid: 6d31ea3459080794ca2d221236c67ab5, type: 2}
   - {fileID: 11400000, guid: bb030756cdb52b940832a6de09720145, type: 2}

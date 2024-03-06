@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RecipeController : MonoBehaviour
@@ -19,6 +20,11 @@ public class RecipeController : MonoBehaviour
     void Update()
     {
         Drug.text = currentNote.NameOfDrug;
+        for (int i = 0; i < indgridients.Length; i++)
+        {
+            indgridients[i].text = "";
+        }
+        
         for (int i = 0; i < currentNote.NamesOfIngrdients.Length; i++)
         {
             indgridients[i].text = currentNote.NamesOfIngrdients[i].name;

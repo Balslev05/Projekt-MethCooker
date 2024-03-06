@@ -9,28 +9,30 @@ public class openNotebook : MonoBehaviour
 {
     public bool NotebookHit = false;
     public bool NotebookOpen = false;
-    public GameObject Notebook;
+    public GameObject NotebookUI;
+
+    [SerializeField]private Vector3 startpos;
     // Start is called before the first frame update
     void Start()
     {
-        
+        startpos = NotebookUI.transform.localPosition; 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && NotebookOpen == false && NotebookHit == true)
+        if (Input.GetKeyDown(KeyCode.E) && NotebookOpen == false && NotebookHit)
         {
             //Notebook.gameObject.SetActive(true);
             NotebookOpen = true;
-            Notebook.transform.DOLocalMove(new Vector3(0f, -100f, 0f), 1).SetEase(Ease.OutExpo);
+            NotebookUI.transform.DOLocalMove(new Vector3(0f, -100f, 0f), 1).SetEase(Ease.OutExpo);
 
         }
         else if(Input.GetKeyDown(KeyCode.E) && NotebookOpen == true || NotebookOpen == true && NotebookHit == false)
         {
             //Notebook.gameObject.SetActive(false);
             NotebookOpen = false;
-            Notebook.transform.DOLocalMove(new Vector3(0f, -767f, 0f), 1).SetEase(Ease.OutExpo);
+            NotebookUI.transform.DOLocalMove(startpos, 1).SetEase(Ease.OutExpo);
             
         }
     }
