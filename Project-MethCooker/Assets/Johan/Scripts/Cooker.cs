@@ -14,7 +14,7 @@ public class Cooker : MonoBehaviour
     public List<Ingredients> currentingredient = new();
     public float Cookingtimer;
     public bool Cooking;
-
+    public Progressbar progress;
     public int CookingCondition;
     
     //public Ingredients[] Ingredientsneeded = new Ingredients[10];
@@ -25,7 +25,8 @@ public class Cooker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateIngrediants();        
+        UpdateIngrediants();
+        Cookingtimer = CurrentNote.cookingTimer;
     }
 
      
@@ -42,16 +43,28 @@ public class Cooker : MonoBehaviour
         {
             Cookingtimer -= Time.deltaTime;
         }
-
         if (noteLastFrame != CurrentNote)
         {
             UpdateIngrediants();
+            Cookingtimer = CurrentNote.cookingTimer;
         }
         noteLastFrame = CurrentNote;
-        if (CurrentNote.NameOfDrug == "Ecstasy")
+        if (CurrentNote.NameOfDrug == "Ecstasy" && Cookingtimer <= 0 && Cooking)
         {
+            reset();
             Debug.Log("Ecstasy spawned");
         }
+        else if (CurrentNote.NameOfDrug == "Meth" && Cookingtimer <= 0 && Cooking)
+        {
+            reset();
+            Debug.Log("Meth spawned");
+        }
+        else if (CurrentNote.NameOfDrug == "LSD" && Cookingtimer <= 0 && Cooking)
+        {
+            reset();
+            Debug.Log("LSD spawned");
+        }
+      
     }
 
     public void UpdateIngrediants()
@@ -59,9 +72,16 @@ public class Cooker : MonoBehaviour
         Ingredientsneeded.Clear();
         for (int i = 0; i < CurrentNote.NamesOfIngrdients.Length; i++)
         {
-            
             Ingredientsneeded.Add(CurrentNote.NamesOfIngrdients[i]);   
         }
+    }
+
+    private void reset()
+    {
+        Cookingtimer = CurrentNote.cookingTimer;
+        Cooking = false;
+        currentingredient.Clear();
+        progress.current = 0;
     }
 
     public void CheckIfIngredientsIsPresent()
