@@ -7,5 +7,6 @@ public class NoteCreater : ScriptableObject
 {
     public string NameOfDrug;
     public Ingredients[] NamesOfIngrdients;
+    public float cookingTimer;
 
 }
