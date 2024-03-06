@@ -1,82 +1,38 @@
-using System;
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
-using Random = UnityEngine.Random;
 
 public class Police : MonoBehaviour
 {
-    
+    public string levelname;
     public PlayerMovement Morten;
-    public float CarSpeed;
-    
-    [Header("Timers")]
-    public float timer;
-    public float min_T,max_T;
-    public float ScoutingTimer;
-    
-    [Header("Points")]
-    public Transform PointA;
-    public Transform PointB;
+    public float policetimer;
 
-    [SerializeField] private Vector3 StartPos;
-    
-    private bool _scouting;
-    private bool _running = false;
     // Start is called before the first frame update
-    private void Awake()
-    {
-        StartPos = gameObject.transform.position;
-    }
-
     void Start()
     {
-        transform.position = StartPos;
-        timer = Random.Range(min_T,max_T);
-        if (!_running)
-        {
-            StartCoroutine(PolicePatroel());
-        }
-    }
-
-    private void Update()
-    {
-        Scouting();
+        policetimer = Random.Range(0, 100);
+        Invoke(nameof(PolicePatroel),policetimer);
     }
 
     // Update is called once per frame
-    IEnumerator PolicePatroel()
+    void Update()
     {
-        _running = true;
-        yield return new WaitForSeconds(timer + CarSpeed);
-        gameObject.transform.DOLocalMove(PointA.transform.position, CarSpeed).SetEase(Ease.OutExpo);
-        _scouting = true;
-        
-        yield return new WaitForSeconds(ScoutingTimer + CarSpeed);
-        
-        gameObject.transform.DOLocalMove(PointB.transform.position, CarSpeed).SetEase(Ease.OutExpo);
-        
-        yield return new WaitForSeconds(1 + CarSpeed);
-        
-        _running = false;
-        Start();
+       
     }
-
-
-    public void Scouting()
+    void PolicePatroel()
     {
-        if (Morten.jumping == false && _scouting)
+        if (Morten.jumping == false)
         {
-           // Get more 
+            SceneManager.LoadScene(levelname);
         }
         else
         {
-            
+            return;
         }
+
     }
-    
 }
