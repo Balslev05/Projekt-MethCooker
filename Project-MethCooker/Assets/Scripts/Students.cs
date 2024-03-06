@@ -2,14 +2,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using TMPro;
 using UnityEngine;
 
 public class Students : MonoBehaviour
 {
-    [Header("Assignebels")]
+    [Header("Assignebels")] 
+    public DummeSpørgesmål ElevensSpørgesmål;
     public GameObject udråbstegn;
     public Transform targetpostion;
+    [Header("TavelDialog")] 
+    public TMP_Text spørgesmålTitel;
+    public TMP_Text[] SvarUI;
+    
    
     [Header("stats")]
     public float Studentsraisehands;

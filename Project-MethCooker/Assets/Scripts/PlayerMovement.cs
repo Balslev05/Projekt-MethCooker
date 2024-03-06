@@ -256,6 +256,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (other.GetComponent<Students>().handisraised && Input.GetKeyDown(KeyCode.E))
             {
+                
                 print("StartsDialog");
             }
         }

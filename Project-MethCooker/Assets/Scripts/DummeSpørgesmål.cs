@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "spørgsmål", menuName = "DummeF*ckingSpørgeSmål", order = 3)]
-public class DummeSpørgesmål : MonoBehaviour
+public class DummeSpørgesmål : ScriptableObject
 {
     [Header("DumtSpørgemål")]
     [TextArea(10,10)]
