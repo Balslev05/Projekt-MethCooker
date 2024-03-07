@@ -96,6 +96,7 @@ public class JesseBehavior : MonoBehaviour
 
     public void NewRecipePress()
     {
+        Debug.Log("New recipe");
         //currentRecipe = newRecipe;
         newRecipeButton.gameObject.SetActive(false);
         sellButton.gameObject.SetActive(false);
