@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameOfDrug: LSD
   NamesOfIngrdients:
-  - {fileID: 11400000, guid: 04bd78c5c49302d48b4c445b0b710ca3, type: 2}
   - {fileID: 11400000, guid: 4d945a0d571318549b404a81e4563f68, type: 2}
   - {fileID: 11400000, guid: 7103f3f3ad6643440a16aa977c9fb156, type: 2}
   - {fileID: 11400000, guid: 1dac5699687e35f40a11b7c66f0035a2, type: 2}
   - {fileID: 11400000, guid: 33211360fe688284783b0f600246081e, type: 2}
-  cookingTimer: 90
+  cookingTimer: 60
