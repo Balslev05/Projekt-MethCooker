@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _isFacingRight;
     private bool sprinting = false;
     private bool CanStand = false;
-    private bool cutscene = false;
+    [HideInInspector] public bool cutscene = false;
     private bool isTeaching;
     
     private Vector2 _movement;

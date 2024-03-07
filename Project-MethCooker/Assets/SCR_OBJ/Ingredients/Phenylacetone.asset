@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Phenylacetone
   m_EditorClassIdentifier: 
   name: Phenylacetone
+  sprite: {fileID: -658091318, guid: 915cb94a97e673b4fadadc03de6367b8, type: 3}

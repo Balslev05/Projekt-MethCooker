@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Caffeine
   m_EditorClassIdentifier: 
   name: Caffeine
+  sprite: {fileID: -1568896032, guid: 915cb94a97e673b4fadadc03de6367b8, type: 3}

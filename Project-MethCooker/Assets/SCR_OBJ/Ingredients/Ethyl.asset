@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Ethyl
   m_EditorClassIdentifier: 
   name: Ethyl
+  sprite: {fileID: -849123573, guid: 915cb94a97e673b4fadadc03de6367b8, type: 3}

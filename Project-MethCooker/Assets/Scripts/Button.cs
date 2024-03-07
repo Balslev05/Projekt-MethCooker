@@ -24,12 +24,13 @@ public class Button : MonoBehaviour
     {
         if (correcanware)
         {
-            Tavel.SetActive(false);
+            Tavel.transform.localScale = new Vector3(0,0,0);
         }
          if (!correcanware)
         {
             Morten_Trust.currentTrust -= 3;
-            Tavel.SetActive(false);
+            Tavel.transform.localScale = new Vector3(0,0,0);
+
         }
     }
 }

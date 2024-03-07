@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Methylamine
   m_EditorClassIdentifier: 
   name: Methylamine
+  sprite: {fileID: -59866903, guid: 915cb94a97e673b4fadadc03de6367b8, type: 3}

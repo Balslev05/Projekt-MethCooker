@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: hydrazine
   m_EditorClassIdentifier: 
   name: Hydrazine
+  sprite: {fileID: -1629649299, guid: 915cb94a97e673b4fadadc03de6367b8, type: 3}

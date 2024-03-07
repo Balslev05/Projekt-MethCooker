@@ -10,11 +10,11 @@ public class Students : MonoBehaviour
     [Header("Assignebels")] 
     public DummeSpørgesmål ElevensSpørgesmål;
     public GameObject udråbstegn;
-    public Transform targetpostion;
     [Header("TavelDialog")] 
     public GameObject tavel;
-    public TMP_Text spørgesmålTitel;
-    public TMP_Text[] SvarUI;
+    public GameObject spørgesmålTitel;
+    public GameObject[] SvarUI;
+    private Repetation trust;
     
    
     [Header("stats")]
@@ -31,21 +31,28 @@ public class Students : MonoBehaviour
 
     void Start()
     {
-        Studentsraisehands = UnityEngine. Random.Range (0, 100);
     }
 
     // Update is called once per frame
     void Update()
     {
+        spørgesmålTitel = GameObject.FindWithTag("Titel");
+        SvarUI = GameObject.FindGameObjectsWithTag("Svar");
         Studentlifetime += Time.deltaTime;
-        if (Studentlifetime > Studentsraisehands && !handisraised)
+
+        if (Studentlifetime > 30)
         {
-            Vector3 walkdirection =   targetpostion.position - transform.position;
+            trust.currentTrust -= 1;
+            Destroy(gameObject);
+        }
+        if (Studentlifetime > Studentsraisehands)
+        {
+            Vector3 walkdirection =   tavel.transform.position - transform.position;
             walkdirection = walkdirection.normalized;
             transform.position += walkdirection * Time.deltaTime;
         }
         
-        if( Vector2.Distance(transform.position,targetpostion.transform.position) < 1.5f)
+        if( Vector2.Distance(transform.position,tavel.transform.position) < 1.5f)
         {
             handisraised = true;    
             udråbstegn.SetActive(true);
@@ -54,25 +61,31 @@ public class Students : MonoBehaviour
 
     public void Spøgsmål()
     {
-        tavel.SetActive(true);
-        spørgesmålTitel.text = ElevensSpørgesmål.Spørgesmål;
+        tavel.transform.localScale = new Vector3(0,0,0);
         
+        spørgesmålTitel.GetComponent<TMP_Text>().text = ElevensSpørgesmål.Spørgesmål;
         for (int i = 0; i < ElevensSpørgesmål.Svarmuligheder.Length; i++)
         {
             print(i);
             if (ElevensSpørgesmål.Rigtignummer == i)
             {
-                SvarUI[i].text= ElevensSpørgesmål.Svarmuligheder[i];
+                SvarUI[i].GetComponent<TMP_Text>().text= ElevensSpørgesmål.Svarmuligheder[i];
                 SvarUI[i].gameObject.GetComponent<Button>().correcanware = true;
             }
             else
             {                
                 SvarUI[i].gameObject.GetComponent<Button>().correcanware = false;
-                SvarUI[i].text= ElevensSpørgesmål.Svarmuligheder[i];
+                SvarUI[i].GetComponent<TMP_Text>().text= ElevensSpørgesmål.Svarmuligheder[i];
             }
         }
+    }
 
 
+    public void setSetting(Transform Target, Repetation morten)
+    {
+        print("woaw");
+        tavel = Target.gameObject;
+        trust = morten;
     }
 
 

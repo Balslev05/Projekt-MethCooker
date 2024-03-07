@@ -7,18 +7,20 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
-
+using TMPro;
 public class Police : MonoBehaviour
 {
     [Header("Assignebel")] 
     public AudioSource sirens;
     public PlayerMovement Morten;
     public Repetation Morten_trust;
+    public TMP_Text warningMessege_UI;
     
     [Header("Stats")]
     public float policetimer;
     public float carSpeed;
     public float punishment;
+    public string warningMessege;
     
     [Header("Timers")]
     public float timer;
@@ -66,6 +68,9 @@ public class Police : MonoBehaviour
         caughtTimer = 0;
         _running = true;
         caught = false;
+        
+        warningMessege_UI.text = warningMessege;
+        // sound 
         yield return new WaitForSeconds(timer + carSpeed);
         
         //kommer frem og holder
@@ -75,13 +80,15 @@ public class Police : MonoBehaviour
         yield return new WaitForSeconds(ScoutingTimer + carSpeed);
         
         // kør væk
-        gameObject.transform.DOLocalMove(PointB.transform.position, carSpeed).SetEase(Ease.OutExpo);
         caughtTimer = 0;
+        _scouting = false;
+        warningMessege_UI.text = "";
+        gameObject.transform.DOLocalMove(PointB.transform.position, carSpeed).SetEase(Ease.OutExpo);
         DOTween.To(() => sirens.volume, x => sirens.volume = x, 0, carSpeed).SetEase(Ease.OutExpo);
         yield return new WaitForSeconds(1 + carSpeed);
         
         //efter den er kørt
-        _scouting = false;
+         caughtTimer = 0;
         _running = false;
         Start();
     }
@@ -89,7 +96,7 @@ public class Police : MonoBehaviour
 
     public void Scouting()
     {
-        if (Morten.jumping == false && _scouting)
+        if (Morten.jumping == false && _scouting && !Morten.cutscene)
         {
             caughtTimer += Time.deltaTime;
         }

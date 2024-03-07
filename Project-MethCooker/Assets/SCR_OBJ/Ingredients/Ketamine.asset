@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Ketamine
   m_EditorClassIdentifier: 
   name: Ketamine
+  sprite: {fileID: -122038482, guid: 915cb94a97e673b4fadadc03de6367b8, type: 3}
