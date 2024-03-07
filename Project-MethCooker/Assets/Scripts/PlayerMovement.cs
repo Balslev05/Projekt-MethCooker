@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject walkpointsA,walkpointsB;
     public float WalkSpeed;
     [SerializeField] private GameObject currentstudent;
+    public AcidBath acidBath;
 
 
     [Header("Outfit")] 
@@ -232,8 +233,8 @@ public class PlayerMovement : MonoBehaviour
         cutscene = true;
         
         animator.Play("Walk");
-        transform.DOMove(walkpointsA.transform.position, WalkSpeed).SetEase(Ease.Linear);
         
+        transform.DOMove(walkpointsA.transform.position, WalkSpeed).SetEase(Ease.Linear);
         currentstudent.transform.DOMove(walkpointsA.transform.position, WalkSpeed + 0.5f).SetEase(Ease.Linear);
         
         yield return new WaitForSeconds(WalkSpeed + 0.8f);
@@ -245,7 +246,11 @@ public class PlayerMovement : MonoBehaviour
         currentstudent.transform.DOMove(walkpointsB.transform.position, WalkSpeed + 2.5f).SetEase(Ease.Linear);
 
         yield return new WaitForSeconds(WalkSpeed + 3);
+        
         animator.Play("Idle");
+        
+        acidBath.Dissolving();
+        
         Destroy(currentstudent,1);
         cutscene = false;
 
@@ -265,7 +270,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Student"))

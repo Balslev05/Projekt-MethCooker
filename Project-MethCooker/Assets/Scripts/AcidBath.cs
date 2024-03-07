@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class AcidBath : MonoBehaviour
@@ -12,47 +13,37 @@ public class AcidBath : MonoBehaviour
     public float Timer;
     public float current;
     public Image Acid;
-    public bool endAcid = false;
+    public bool _dissolving = false;
+    public GameObject particalsEffect;
 
     // Start is called before the first frame update
     void Start()
     {
         Acid.GetComponent<Slider>().maxValue = Timer;
         current = Timer;
-        
     }
-
-    // Update is called once per frame
     void Update()
     {
-        if (endAcid == true)
+        if (_dissolving)
         {
-        Debug.Log(current);
-        currentfillamount();
+            current -= Time.deltaTime;
         }
 
         if (current <= 0)
         {
-            endAcid = false;
+            particalsEffect.SetActive(false);
+            _dissolving = false;
             current = 60;
-            Acid.GetComponent<Slider>().value = current;
         }
-        
-        /*if (current < 1)
-        {
-        }*/
-
-    }
-    void currentfillamount()
-    {
-        //float fillamount = (float)current / (float)maximum;
-
-       current -= Time.deltaTime;
-
         Acid.GetComponent<Slider>().value = current;
-        
     }
-    
 
+
+    public void Dissolving()
+    {
+        particalsEffect.SetActive(true);
+        _dissolving = true;
+        current = 60;
+    }
 }
 

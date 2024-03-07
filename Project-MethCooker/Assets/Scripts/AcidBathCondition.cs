@@ -8,6 +8,6 @@ public class AcidBathCondition : MonoBehaviour
    public Animator startAcid;
    public void acidBath()
    {
-      acid.endAcid = true;
+      acid._dissolving = true;
    }
 }

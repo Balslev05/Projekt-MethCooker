@@ -61,7 +61,7 @@ public class Students : MonoBehaviour
 
     public void Spøgsmål()
     {
-        tavel.transform.localScale = new Vector3(1,1,1);
+        spørgesmålTitel.transform.localScale = new Vector3(1,1,1);
         
         spørgesmålTitel.GetComponent<TMP_Text>().text = ElevensSpørgesmål.Spørgesmål;
         for (int i = 0; i < ElevensSpørgesmål.Svarmuligheder.Length; i++)

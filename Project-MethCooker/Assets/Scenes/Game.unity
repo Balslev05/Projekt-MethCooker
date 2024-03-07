@@ -585,8 +585,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.118749976, y: 1.6285499, z: 0}
-    m_Extent: {x: 1.35175, y: 2.6294498, z: 0}
+    m_Center: {x: 0.12040001, y: 1.6315, z: 0}
+    m_Extent: {x: 1.3518, y: 2.6301, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -5087,6 +5087,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7883523863426930198}
     - target: {fileID: 8794824787843077507, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
+      propertyPath: acidBath
+      value: 
+      objectReference: {fileID: 2000619621}
+    - target: {fileID: 8794824787843077507, guid: d9d39362e46fca74faad7a7790c18be6, type: 3}
       propertyPath: WalkSpeed
       value: 2
       objectReference: {fileID: 0}
@@ -5317,8 +5321,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.12204999, y: 1.6319501, z: 0}
-    m_Extent: {x: 1.36205, y: 2.63045, z: 0}
+    m_Center: {x: 0.12729996, y: 1.6272999, z: 0}
+    m_Extent: {x: 1.356, y: 2.6338, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -6239,6 +6243,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee96d29eef9368f4199b18475127b407, type: 3}
+--- !u!1 &1660763119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2424924130893611603, guid: 949415788f5e83a42afa7d10218e5eb1, type: 3}
+  m_PrefabInstance: {fileID: 485001768}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1669195394
 GameObject:
   m_ObjectHideFlags: 0
@@ -6522,6 +6531,10 @@ PrefabInstance:
       propertyPath: maximum
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 215677703959937693, guid: 3863b2a61e420364b8c680af0e763c05, type: 3}
+      propertyPath: particalsEffect
+      value: 
+      objectReference: {fileID: 1660763119}
     - target: {fileID: 1360860482156344715, guid: 3863b2a61e420364b8c680af0e763c05, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7100,6 +7113,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2000619621 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 215677703959937693, guid: 3863b2a61e420364b8c680af0e763c05, type: 3}
+  m_PrefabInstance: {fileID: 1696667591}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3146d742625c3a94ea9071aa70e87a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2113441127
 GameObject:
   m_ObjectHideFlags: 0
@@ -11406,7 +11430,7 @@ GameObject:
   - component: {fileID: 8110195896596016746}
   m_Layer: 5
   m_Name: "Sp\xF8rgsm\xE5l"
-  m_TagString: Titel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12288,7 +12312,7 @@ GameObject:
   - component: {fileID: 4788417841606519206}
   m_Layer: 5
   m_Name: ElevSamtaler_UI
-  m_TagString: Untagged
+  m_TagString: Titel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
