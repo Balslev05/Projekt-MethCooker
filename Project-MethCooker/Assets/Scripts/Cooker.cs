@@ -89,6 +89,8 @@ public class Cooker : MonoBehaviour
         currentingredient.Clear();
         
         progress.current = 0;
+        CookingCondition = 0;
+        Cooking = false;
         Debug.Log("progress = 0");
     }
 

@@ -11,6 +11,7 @@ public class Repetation : MonoBehaviour
     [Header("UI")] 
     public Image fillbar;
     public Slider slider;
+    public bool hasShaken = false;
     void Start()
     {
         slider.maxValue = maxTrust;
@@ -22,5 +23,11 @@ public class Repetation : MonoBehaviour
     void Update()
     {
         slider.value = currentTrust;
+        if (currentTrust <= 0f && hasShaken == false)
+        {
+            Debug.Log("Shaking");
+            CinemachineShake.Instance.ShakeCamera(1f, 1f);
+            hasShaken = true;
+        }
     }
 }
