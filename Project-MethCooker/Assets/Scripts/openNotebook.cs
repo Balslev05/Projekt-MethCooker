@@ -25,7 +25,7 @@ public class openNotebook : MonoBehaviour
         {
             //Notebook.gameObject.SetActive(true);
             NotebookOpen = true;
-            NotebookUI.transform.DOLocalMove(new Vector3(0f, -100f, 0f), 1).SetEase(Ease.OutExpo);
+            NotebookUI.transform.DOLocalMove(new Vector3(0f, -218f, 0f), 1).SetEase(Ease.OutExpo);
 
         }
         else if(Input.GetKeyDown(KeyCode.E) && NotebookOpen == true || NotebookOpen == true && NotebookHit == false)
