@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9eb05e50dd2c32b41aebfe1b551049a3, type: 3}
-  m_Name: "sp\xF8rgsm\xE5l 6"
+  m_Name: "sp\xF8rgsm\xE5l 8"
   m_EditorClassIdentifier: 
-  "Sp\xF8rgesm\xE5l": Hvor mange elektroner er det nu kulstofatomet i den yderste
-    elektronskal har?
-  Rigtignummer: 3
+  "Sp\xF8rgesm\xE5l": Hvad hedder de simpleste kulhydrater?
+  Rigtignummer: 2
   Svarmuligheder:
-  - "Sp\xF8rg dig selv"
-  - 3
-  - 7
-  - 4
+  - Nej
+  - Ahmed abdhul Shihad allah muhammed shibab
+  - Monosakkarrider
+  - Sakkarider
