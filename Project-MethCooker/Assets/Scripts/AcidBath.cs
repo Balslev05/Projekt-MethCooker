@@ -26,7 +26,7 @@ public class AcidBath : MonoBehaviour
         Debug.Log(current);
         if (current < 1)
         {
-            current = 100;
+            current = 60;
         }
         currentfillamount();
 
