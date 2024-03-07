@@ -61,12 +61,11 @@ public class Students : MonoBehaviour
 
     public void Spøgsmål()
     {
-        tavel.transform.localScale = new Vector3(0,0,0);
+        tavel.transform.localScale = new Vector3(1,1,1);
         
         spørgesmålTitel.GetComponent<TMP_Text>().text = ElevensSpørgesmål.Spørgesmål;
         for (int i = 0; i < ElevensSpørgesmål.Svarmuligheder.Length; i++)
         {
-            print(i);
             if (ElevensSpørgesmål.Rigtignummer == i)
             {
                 SvarUI[i].GetComponent<TMP_Text>().text= ElevensSpørgesmål.Svarmuligheder[i];

@@ -102,7 +102,6 @@ public class PickUp : MonoBehaviour
         {
             drugHit = true;
             standingOn = other.GetComponent<Item>().Ingredients;
-
         }
         if (other)
         {
