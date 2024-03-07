@@ -72,14 +72,14 @@ public class JesseBehavior : MonoBehaviour
         if (sellDrugs.methOnBody > 0)
         {
             dialogeText.text = "Jesse Cyanman: Thank's Mr. Mørk";
-            cash += sellDrugs.methOnBody * 150;
+            cash += sellDrugs.methOnBody * 200;
             sellDrugs.methOnBody = 0;
 
         }
         else if (sellDrugs.LSDOnBody > 0)
         {
             dialogeText.text = "Jesse Cyanman: Thank's Mr. Mørk";
-            cash += sellDrugs.LSDOnBody * 200;
+            cash += sellDrugs.LSDOnBody * 150;
             sellDrugs.LSDOnBody = 0;
         }
         else if (sellDrugs.EcstasyOnBody > 0)
