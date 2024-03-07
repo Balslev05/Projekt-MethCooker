@@ -44,12 +44,13 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Outfit")] 
     public bool Kidle;
-    private float startSpeed;
     
+    private float startSpeed;
     private bool _isFacingRight;
     private bool sprinting = false;
     private bool CanStand = false;
     private bool cutscene = false;
+    private bool isTeaching;
     
     private Vector2 _movement;
     private Vector2 _lastDirection;
@@ -59,7 +60,6 @@ public class PlayerMovement : MonoBehaviour
     public GameObject tavel;
     public GameObject walkpointsA,walkpointsB;
     public float WalkSpeed;
-    public 
     
     
     
@@ -218,9 +218,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
-    public IEnumerator AcidScene(GameObject Student)
+    public void OnButtonStart()
     {
+        StartCoroutine(AcidScene());
+    }
+    
+
+    public IEnumerator AcidScene()
+    {
+        tavel.SetActive(false);
         transform.position = tavel.transform.position;
         
         cutscene = true;
@@ -256,8 +262,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (other.GetComponent<Students>().handisraised && Input.GetKeyDown(KeyCode.E))
             {
-                
-                print("StartsDialog");
+                isTeaching = true;
+                other.GetComponent<Students>().Spøgsmål();
             }
         }
     }

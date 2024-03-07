@@ -9,6 +9,10 @@ public class DummeSpørgesmål : ScriptableObject
     [TextArea(10,10)]
     public string Spørgesmål;
     
+    public int Rigtignummer;
+    
     [Header("svarMuligheder")] 
     public string[] Svarmuligheder;
+
+
 }
