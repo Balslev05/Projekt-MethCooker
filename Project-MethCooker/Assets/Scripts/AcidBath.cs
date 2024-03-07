@@ -35,7 +35,7 @@ public class AcidBath : MonoBehaviour
     {
         //float fillamount = (float)current / (float)maximum;
 
-        DOTween.To(() => current, x => current = x, 0, Timer).SetEase(Ease.Linear); 
+       current -= Time.deltaTime;
 
         Acid.GetComponent<Slider>().value = current;
         
