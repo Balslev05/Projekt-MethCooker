@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,322 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: placable_layer_3
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 184
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5362afbcb92f1bc4da9aeaa222e441cd
+      internalID: -1135337119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placable_layer_4
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 184
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1964acbf95671624b95b20429967d860
+      internalID: -2120895622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placable_layer_5
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 201
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9351df90f0ce3248a440dc99c1caf30
+      internalID: 693612806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placable_layer_6
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 182
+        width: 24
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 445bd0a7c698f034bb44d8c207bf28c6
+      internalID: -959727529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placable_layer_7
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 139
+        width: 68
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f67f628bb75290742be86d73b1b45c47
+      internalID: 665112153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placable_layer_8
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 182
+        width: 37
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86bf166122a6090439253d82dc4fc6ce
+      internalID: 1598958960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placable_layer_9
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 191
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a77919f319af3147b888a286db6706f
+      internalID: -2110505741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placable_layer_10
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 160
+        width: 69
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5069085, y: 0.7517719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a68a2ecca116bfd48843ac17ab53684f
+      internalID: -1571504150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placable_layer_11
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 112
+        width: 38
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f271dee6dc92c6a48aef18e5e1108a4f
+      internalID: -531397128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placable_layer_12
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 76
+        width: 14
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f8f9a7b11483f4fa3c2a029c2ed367
+      internalID: -631066202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placable_layer_13
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 92
+        width: 10
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb20f64007bbae449e4b9ad97b928c0
+      internalID: -1079970529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placable_layer_14
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 81
+        width: 121
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b93edefdae76146b11e6ee1a586625
+      internalID: -1587180003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placable_layer_19
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 49
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e071cc33c23620748821af65d07abf5a
+      internalID: 818160031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placable_layer_20
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 49
+        width: 38
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd578ee64d3cf184285f9799b6a8593d
+      internalID: -1420470812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placable_layer_21
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 49
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 888322521e0ca484b9b2db60c1db6f12
+      internalID: 891724682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +434,29 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      placable_layer_0: 1595922336
+      placable_layer_1: -1924419500
+      placable_layer_10: -1571504150
+      placable_layer_11: -531397128
+      placable_layer_12: -631066202
+      placable_layer_13: -1079970529
+      placable_layer_14: -1587180003
+      placable_layer_15: 277960537
+      placable_layer_16: -1550084179
+      placable_layer_17: -36475442
+      placable_layer_18: -195188036
+      placable_layer_19: 818160031
+      placable_layer_2: 1915844123
+      placable_layer_20: -1420470812
+      placable_layer_21: 891724682
+      placable_layer_3: -1135337119
+      placable_layer_4: -2120895622
+      placable_layer_5: 693612806
+      placable_layer_6: -959727529
+      placable_layer_7: 665112153
+      placable_layer_8: 1598958960
+      placable_layer_9: -2110505741
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -37,14 +37,15 @@ public class Students : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     Studentlifetime += Time.deltaTime;
+        Studentlifetime += Time.deltaTime;
         if (Studentlifetime > Studentsraisehands && !handisraised)
         {
             Vector3 walkdirection =   targetpostion.position - transform.position;
             walkdirection = walkdirection.normalized;
             transform.position += walkdirection * Time.deltaTime;
         }
-        if( Vector2.Distance(transform.position,targetpostion.transform.position) < 0.5f)
+        
+        if( Vector2.Distance(transform.position,targetpostion.transform.position) < 1.5f)
         {
             handisraised = true;    
             udråbstegn.SetActive(true);

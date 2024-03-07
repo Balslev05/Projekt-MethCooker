@@ -55,3 +55,6 @@ TagManager:
   - name: Effect
     uniqueID: 250321375
     locked: 0
+  - name: Sorting
+    uniqueID: 537147641
+    locked: 0
