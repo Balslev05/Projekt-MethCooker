@@ -1,9 +1,9 @@
-    using DG.Tweening;
+using DG.Tweening;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Students : MonoBehaviour
 {
@@ -55,9 +55,20 @@ public class Students : MonoBehaviour
     {
         tavel.SetActive(true);
         spørgesmålTitel.text = ElevensSpørgesmål.Spørgesmål;
+        
         for (int i = 0; i < ElevensSpørgesmål.Svarmuligheder.Length; i++)
         {
-             SvarUI[i].text= ElevensSpørgesmål.Svarmuligheder[i];
+            print(i);
+            if (ElevensSpørgesmål.Rigtignummer == i)
+            {
+                SvarUI[i].text= ElevensSpørgesmål.Svarmuligheder[i];
+                SvarUI[i].gameObject.GetComponent<Button>().correcanware = true;
+            }
+            else
+            {                
+                SvarUI[i].gameObject.GetComponent<Button>().correcanware = false;
+                SvarUI[i].text= ElevensSpørgesmål.Svarmuligheder[i];
+            }
         }
 
 
