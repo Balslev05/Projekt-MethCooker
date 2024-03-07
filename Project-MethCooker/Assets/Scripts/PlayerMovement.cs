@@ -40,6 +40,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject dust2;
     [SerializeField] private GameObject feet;
 
+    [Header("AcidSettings")] 
+    public GameObject tavel;
+    public GameObject TavelUI;
+    public GameObject walkpointsA,walkpointsB;
+    public float WalkSpeed;
+    [SerializeField] private GameObject currentstudent;
 
 
     [Header("Outfit")] 
@@ -55,11 +61,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _movement;
     private Vector2 _lastDirection;
     private Vector2 normalSize;
-
-    [Header("AcidSettings")] 
-    public GameObject tavel;
-    public GameObject walkpointsA,walkpointsB;
-    public float WalkSpeed;
     
     
     
@@ -226,17 +227,26 @@ public class PlayerMovement : MonoBehaviour
 
     public IEnumerator AcidScene()
     {
-        tavel.SetActive(false);
+        TavelUI.SetActive(false);
         transform.position = tavel.transform.position;
-        
         cutscene = true;
+        
         animator.Play("Walk");
         transform.DOMove(walkpointsA.transform.position, WalkSpeed).SetEase(Ease.Linear);
-        yield return new WaitForSeconds(WalkSpeed);
-        transform.DOMove(walkpointsB.transform.position, WalkSpeed + 2).SetEase(Ease.Linear);
-        yield return new WaitForSeconds(WalkSpeed + 2.5f);
-        Debug.Log("EndCutscene");
         
+        currentstudent.transform.DOMove(walkpointsA.transform.position, WalkSpeed + 0.5f).SetEase(Ease.Linear);
+        
+        yield return new WaitForSeconds(WalkSpeed + 0.8f);
+        
+        Kidle = true;
+        animator.Play("KidleWalk");
+        
+        transform.DOMove(walkpointsB.transform.position, WalkSpeed + 2).SetEase(Ease.Linear);
+        currentstudent.transform.DOMove(walkpointsB.transform.position, WalkSpeed + 2.5f).SetEase(Ease.Linear);
+
+        yield return new WaitForSeconds(WalkSpeed + 3);
+        animator.Play("Idle");
+        Destroy(currentstudent,1);
         cutscene = false;
 
     }
@@ -262,6 +272,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (other.GetComponent<Students>().handisraised && Input.GetKeyDown(KeyCode.E))
             {
+                currentstudent = other.gameObject;
                 isTeaching = true;
                 other.GetComponent<Students>().Spøgsmål();
             }
