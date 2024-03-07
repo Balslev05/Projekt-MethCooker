@@ -8,6 +8,7 @@ public class DummeSpørgesmål : ScriptableObject
     [Header("DumtSpørgemål")]
     [TextArea(10,10)]
     public string Spørgesmål;
-
-    [Header("SvarMuligheder")] public string Svarmuligheder1, Svarmuligheder2, Svarmuligheder3, Svarmuligheder4;
+    
+    [Header("svarMuligheder")] 
+    public string[] Svarmuligheder;
 }

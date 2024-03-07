@@ -12,6 +12,7 @@ public class Students : MonoBehaviour
     public GameObject udråbstegn;
     public Transform targetpostion;
     [Header("TavelDialog")] 
+    public GameObject tavel;
     public TMP_Text spørgesmålTitel;
     public TMP_Text[] SvarUI;
     
@@ -48,7 +49,20 @@ public class Students : MonoBehaviour
             handisraised = true;
             udråbstegn.SetActive(true);
         }
-
-       
     }
+
+    public void Spøgsmål()
+    {
+        tavel.SetActive(true);
+        spørgesmålTitel.text = ElevensSpørgesmål.Spørgesmål;
+        for (int i = 0; i < ElevensSpørgesmål.Svarmuligheder.Length; i++)
+        {
+             SvarUI[i].text= ElevensSpørgesmål.Svarmuligheder[i];
+        }
+
+
+    }
+
+
+
 }
