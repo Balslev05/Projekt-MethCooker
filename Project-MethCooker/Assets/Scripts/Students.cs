@@ -46,7 +46,7 @@ public class Students : MonoBehaviour
         }
         if( Vector2.Distance(transform.position,targetpostion.transform.position) < 0.5f)
         {
-            handisraised = true;
+            handisraised = true;    
             udråbstegn.SetActive(true);
         }
     }
