@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: 191527703, guid: cd37c6a903ca9b54484ba8b7422d9f6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -133,9 +133,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cd495d65f2c702645884447667503ac9, type: 2}
   - {fileID: 11400000, guid: a51c719b3c8376a4a84e3c1dcd4284fd, type: 2}
   - {fileID: 11400000, guid: d0133d6790ac53545951c8fbccd4de0d, type: 2}
+  morten: {fileID: 0}
   "ElevensSp\xF8rgesm\xE5l": {fileID: 0}
   "udr\xE5bstegn": {fileID: 8180202439111632037}
-  tavel: {fileID: 0}
+  Target: {fileID: 0}
   "sp\xF8rgesm\xE5lTitel": {fileID: 0}
   SvarUI:
   - {fileID: 0}

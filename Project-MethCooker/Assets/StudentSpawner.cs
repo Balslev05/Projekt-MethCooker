@@ -16,7 +16,7 @@ public class StudentSpawner : MonoBehaviour
     public bool Spawned = false;
     void Start()
     {
-        spawnStudent();
+        
     }
 
     // Update is called once per frame
@@ -25,9 +25,10 @@ public class StudentSpawner : MonoBehaviour
         studentsraisehands += Time.deltaTime;
         if (studentsraisehands > r && !Spawned)
         {
+            Spawned = true;
+            spawnStudent();
             GameObject studentIns =  Instantiate(student,transform.position,Quaternion.identity);
             studentIns.GetComponent<Students>().setSetting(tavel,morten);
-            Spawned = true;
             Invoke(nameof(reset),30);
         }
     }

@@ -25,7 +25,7 @@ public class Zone : MonoBehaviour
             }
             if (!kildeZone && morten.Kidle && !morten.cutscene)
             {
-                Trust.currentTrust -= Time.deltaTime;
+                Trust.currentTrust -= punishment;
                 WarningMessege.text = messege;
             }
         }
