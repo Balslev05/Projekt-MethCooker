@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb05e50dd2c32b41aebfe1b551049a3, type: 3}
   m_Name: "sp\xF8rgsm\xE5l 1"
   m_EditorClassIdentifier: 
-  "Sp\xF8rgesm\xE5l": "Hvad er det nu det hedder det man skal blande med for at f\xE5
-    en alkohol?"
+  "Sp\xF8rgesm\xE5l": "Hvad er det nu det hedder det man f\xE5r n\xE5r man blander
+    en ester med en syre?"
   Rigtignummer: 0
   Svarmuligheder:
-  - Ester
-  - Metanol
+  - Alkohol
+  - Mere syre
   - Er du dum?
   - "Sp\xF8rg en klassekammerat "
