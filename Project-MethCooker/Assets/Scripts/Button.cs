@@ -7,6 +7,7 @@ public class Button : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool correcanware;
+    public PlayerMovement morten;
     public Repetation Morten_Trust;
     public GameObject Tavel;
     void Start()
@@ -25,12 +26,16 @@ public class Button : MonoBehaviour
         if (correcanware)
         {
             Tavel.transform.localScale = new Vector3(0,0,0);
+            Destroy(morten.currentstudent);
+            morten.isTeaching = false;
+            Morten_Trust.currentTrust++;
         }
-         if (!correcanware)
+        if (!correcanware)
         {
             Morten_Trust.currentTrust -= 3;
             Tavel.transform.localScale = new Vector3(0,0,0);
-
+            Destroy(morten.currentstudent);
+            morten.isTeaching = false;
         }
     }
 }

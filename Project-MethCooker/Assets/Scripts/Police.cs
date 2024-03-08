@@ -27,7 +27,6 @@ public class Police : MonoBehaviour
     public float min_T,max_T;
     public float ScoutingTimer;
     
-    
     [Header("Points")]
     public Transform PointA;
     public Transform PointB;
@@ -42,12 +41,14 @@ public class Police : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+       
         StartPos = gameObject.transform.position;
         sirens.volume = 0;
     }
 
     void Start()
     {
+        warningMessege_UI.text = " "; 
         transform.position = StartPos;
         timer = Random.Range(min_T,max_T);
         if (!_running)
@@ -68,11 +69,10 @@ public class Police : MonoBehaviour
         caughtTimer = 0;
         _running = true;
         caught = false;
-        
-        warningMessege_UI.text = warningMessege;
         // sound 
         yield return new WaitForSeconds(timer + carSpeed);
         
+        warningMessege_UI.text = warningMessege;
         //kommer frem og holder
         DOTween.To(() => sirens.volume, x => sirens.volume = x, sirensMaxSound, carSpeed).SetEase(Ease.OutExpo);
         gameObject.transform.DOLocalMove(PointA.transform.position, carSpeed).SetEase(Ease.OutExpo);

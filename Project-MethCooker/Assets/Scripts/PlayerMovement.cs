@@ -7,6 +7,7 @@ using UnityEditor.Rendering.Universal;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
@@ -45,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject TavelUI;
     public GameObject walkpointsA,walkpointsB;
     public float WalkSpeed;
-    [SerializeField] private GameObject currentstudent;
+    [SerializeField] public GameObject currentstudent;
     public AcidBath acidBath;
 
 
@@ -53,11 +54,11 @@ public class PlayerMovement : MonoBehaviour
     public bool Kidle;
     
     private float startSpeed;
-    private bool _isFacingRight;
-    private bool sprinting = false;
-    private bool CanStand = false;
-    [HideInInspector] public bool cutscene = false;
-    private bool isTeaching;
+    [SerializeField] private bool _isFacingRight;
+    [SerializeField] private bool sprinting = false;
+    [SerializeField] private bool CanStand = false;
+    [SerializeField] public bool isTeaching;
+    public bool cutscene = false;
     
     private Vector2 _movement;
     private Vector2 _lastDirection;
@@ -228,31 +229,34 @@ public class PlayerMovement : MonoBehaviour
 
     public IEnumerator AcidScene()
     {
-        TavelUI.SetActive(false);
-        transform.position = tavel.transform.position;
-        cutscene = true;
-        
-        animator.Play("Walk");
-        
-        transform.DOMove(walkpointsA.transform.position, WalkSpeed).SetEase(Ease.Linear);
-        currentstudent.transform.DOMove(walkpointsA.transform.position, WalkSpeed + 0.5f).SetEase(Ease.Linear);
-        
-        yield return new WaitForSeconds(WalkSpeed + 0.8f);
-        
-        Kidle = true;
-        animator.Play("KidleWalk");
-        
-        transform.DOMove(walkpointsB.transform.position, WalkSpeed + 2).SetEase(Ease.Linear);
-        currentstudent.transform.DOMove(walkpointsB.transform.position, WalkSpeed + 2.5f).SetEase(Ease.Linear);
+        if (!acidBath._dissolving)
+        {
+            TavelUI.transform.localScale = new Vector3(0,0,0);
+            transform.position = tavel.transform.position;
+            cutscene = true;
+            
+            animator.Play("Walk");
+            transform.DOMove(walkpointsA.transform.position, WalkSpeed).SetEase(Ease.Linear);
+            
+            currentstudent.transform.DOMove(walkpointsA.transform.position, WalkSpeed + 0.5f).SetEase(Ease.Linear);
+            
+            yield return new WaitForSeconds(WalkSpeed + 0.8f);
+            Kidle = true;
+            animator.Play("KidleWalk");
+            
+            transform.DOMove(walkpointsB.transform.position, WalkSpeed).SetEase(Ease.Linear);
+             
+            currentstudent.transform.DOMove(walkpointsB.transform.position, WalkSpeed + 0.5f).SetEase(Ease.Linear);
 
-        yield return new WaitForSeconds(WalkSpeed + 3);
-        
-        animator.Play("Idle");
-        
-        acidBath.Dissolving();
-        
-        Destroy(currentstudent,1);
-        cutscene = false;
+            yield return new WaitForSeconds(WalkSpeed + 1);
+            
+            animator.Play("Idle");
+            
+            acidBath.Dissolving();
+            isTeaching = false;
+            Destroy(currentstudent);
+            cutscene = false;
+        }
 
     }
     private void OnTriggerEnter2D(Collider2D other)

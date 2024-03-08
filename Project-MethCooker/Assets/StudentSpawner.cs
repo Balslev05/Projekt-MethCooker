@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class StudentSpawner : MonoBehaviour
 {
+    
+    
+    public float tMin;
+    public float tMax;
     public float studentsraisehands;
     public GameObject student;
     public float r;
@@ -30,7 +34,7 @@ public class StudentSpawner : MonoBehaviour
 
     public void spawnStudent()
     {
-         r = Random.Range (40, 100);
+         r = Random.Range (tMin, tMax);
     }
 
     public void reset()

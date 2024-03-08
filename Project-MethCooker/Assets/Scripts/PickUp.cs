@@ -57,10 +57,10 @@ public class PickUp : MonoBehaviour
             EcstasyOnBody++;
         }
 
-        if (hit == true)
+        if (drugHit == true)
         {
             ColideWith.gameObject.SetActive(true);
-            ColideWith.text = colide.name;
+            ColideWith.text = "Item:" + colide.name;
         }
         else
         {
@@ -72,7 +72,7 @@ public class PickUp : MonoBehaviour
             carryitem = standingOn;
         }
 
-        if (cokkerHit == hit && Input.GetKeyDown(KeyCode.E))
+        if (cokkerHit == hit && Input.GetKeyDown(KeyCode.R))
         {
             cooker.currentingredient.Clear();
         }
@@ -101,7 +101,7 @@ public class PickUp : MonoBehaviour
         if (other.gameObject.CompareTag("Drug"))
         {
             drugHit = true;
-            standingOn = other.GetComponent<Item>().Ingredients;
+            standingOn = other.GetComponent<Itemspawner>().Drugs;
         }
         if (other)
         {

@@ -121,7 +121,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b60053e4528a94dbfb04efba9f6d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "ElevensSp\xF8rgesm\xE5l": {fileID: 11400000, guid: 18ba790e694924a4abd0cc8362fc30af, type: 2}
+  "muligeSp\xF8rgsm\xE5l":
+  - {fileID: 11400000, guid: 18ba790e694924a4abd0cc8362fc30af, type: 2}
+  - {fileID: 11400000, guid: b6d34571cddb3dd42a49d60401b3c323, type: 2}
+  - {fileID: 11400000, guid: 17a24633944977d48a4b9d35bc50719f, type: 2}
+  - {fileID: 11400000, guid: 0233f1078920f51439e67b1b0594a09b, type: 2}
+  - {fileID: 11400000, guid: c729ff7881ff99b49ae4946462292165, type: 2}
+  - {fileID: 11400000, guid: 7e677636dc34c6b40952b7819379759b, type: 2}
+  - {fileID: 11400000, guid: 64d4cfff2e3e5a8419733f93d50c82d3, type: 2}
+  - {fileID: 11400000, guid: 35851d05c1882674e98798ed68a65837, type: 2}
+  - {fileID: 11400000, guid: cd495d65f2c702645884447667503ac9, type: 2}
+  - {fileID: 11400000, guid: a51c719b3c8376a4a84e3c1dcd4284fd, type: 2}
+  - {fileID: 11400000, guid: d0133d6790ac53545951c8fbccd4de0d, type: 2}
+  "ElevensSp\xF8rgesm\xE5l": {fileID: 0}
   "udr\xE5bstegn": {fileID: 8180202439111632037}
   tavel: {fileID: 0}
   "sp\xF8rgesm\xE5lTitel": {fileID: 0}

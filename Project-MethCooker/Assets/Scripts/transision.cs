@@ -9,6 +9,7 @@ public class transision : MonoBehaviour
     public Vector3 StartPos;
     public Vector3 EndPos;
     public bool OnAwake;
+    public bool SwitchScene;
     public int timer;
     public int Screentimer;
     void Start()
@@ -17,6 +18,9 @@ public class transision : MonoBehaviour
         if (OnAwake)
         {
             gameObject.transform.DOScale(EndPos,timer).SetEase(Ease.OutExpo);
+        } 
+        if (SwitchScene)
+        {
             Invoke(nameof(SwitcScene),Screentimer);
         }
     }
@@ -37,7 +41,5 @@ public class transision : MonoBehaviour
     public void SwitcScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
     }
-    
 }

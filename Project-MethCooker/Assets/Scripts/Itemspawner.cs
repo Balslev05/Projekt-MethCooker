@@ -15,6 +15,6 @@ public class Itemspawner : MonoBehaviour
     void Update()
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = Drugs.sprite;
-
-    }
+        gameObject.name = Drugs.name;
+    }  
 }

@@ -21,10 +21,10 @@ public class TitelScreen : MonoBehaviour
 
     public IEnumerator StartTittel()
     {
-        bagroundDetails.transform.DOLocalMove( endvalue,2).SetEase(Ease.InExpo);
+        bagroundDetails.transform.DOLocalMove( endvalue,2).SetEase(Ease.OutQuart);
         yield return new WaitForSeconds(3);
         print("changecolor");
-        startText.DOFade(1, 2);
-        exitText.DOFade(1, 2);
+        startText.DOFade(1, 2).SetEase(Ease.InExpo);
+        exitText.DOFade(1, 2).SetEase(Ease.InExpo);
     }
 }
