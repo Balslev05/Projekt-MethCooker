@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "sp\xF8rgsm\xE5l 4"
   m_EditorClassIdentifier: 
   "Sp\xF8rgesm\xE5l": "Er Methol en carbonk\xE6de?"
-  Rigtignummer: 0
+  Rigtignummer: 1
   Svarmuligheder:
   - Ja
-  - Nej
+  - nej
