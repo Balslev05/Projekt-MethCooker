@@ -22,12 +22,20 @@ public class Zone : MonoBehaviour
             {
                 Trust.currentTrust -= punishment;
                 WarningMessege.text = messege;
+                Invoke(nameof(kildeMessegeGone),2);
             }
             if (!kildeZone && morten.Kidle && !morten.cutscene)
             {
                 Trust.currentTrust -= punishment;
                 WarningMessege.text = messege;
+                Invoke(nameof(kildeMessegeGone),2);
             }
         }
+    }
+
+
+    public void kildeMessegeGone()
+    {
+        WarningMessege.text = " ";
     }
 }

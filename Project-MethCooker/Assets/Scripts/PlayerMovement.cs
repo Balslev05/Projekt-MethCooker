@@ -1,14 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TreeEditor;
 using Unity.Mathematics;
-using UnityEditor.Rendering.Universal;
 using UnityEngine;
-using UnityEngine.UI;
 using DG.Tweening;
-using Unity.VisualScripting;
-using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {

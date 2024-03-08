@@ -24,7 +24,7 @@ public class TitelScreen : MonoBehaviour
         bagroundDetails.transform.DOLocalMove( endvalue,2).SetEase(Ease.OutQuart);
         yield return new WaitForSeconds(3);
         print("changecolor");
-        startText.DOFade(1, 2).SetEase(Ease.InExpo);
-        exitText.DOFade(1, 2).SetEase(Ease.InExpo);
+        startText.DOFade(1, 1).SetEase(Ease.OutExpo);
+        exitText.DOFade(1, 1).SetEase(Ease.OutExpo);
     }
 }

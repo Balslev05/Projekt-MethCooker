@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
+using Unity.Mathematics;
 
 public class Repetation : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class Repetation : MonoBehaviour
         slider.value = maxTrust;
         currentTrust = maxTrust;
         oldTrust = currentTrust;
+        currentTrust = math.clamp(currentTrust,0, maxTrust);
         
         DOTween.SetTweensCapacity(10000,1000);
     }
@@ -43,7 +45,7 @@ public class Repetation : MonoBehaviour
         if (currentTrust <= 0)
         {
             reputationDown.DOFade(0.5f, 0.1f).SetEase(Ease.OutCirc);
-            Failed.text = "You have failed in the art of cooking and teaching";
+            Failed.text = "Du kan ikke finde ud af koge eller at værer lærer";
             Failed.gameObject.SetActive(true);
             move.enabled = false;
 

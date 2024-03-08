@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class StudentQuestions : MonoBehaviour
 {
-    public List <DummeSpørgesmål> Questions;
+    public List <DummeSpÃ¸rgesmÃ¥l> Questions;
     public List<GameObject> Elever;
 
     // Start is called before the first frame update
@@ -19,10 +18,10 @@ public class StudentQuestions : MonoBehaviour
     {
         while (Questions.Count > 0)
         {
-            int Spørgsmål;
-            Spørgsmål = Random.Range(0, Questions.Count);
-            Elever[0].GetComponent<Students>().ElevensSpørgesmål = Questions[Spørgsmål];
-            Questions.RemoveAt(Spørgsmål);
+            int spÃ¸rgesmÃ¥l;
+            spÃ¸rgesmÃ¥l = Random.Range(0, Questions.Count);
+            Elever[0].GetComponent<Students>().ElevensSpÃ¸rgesmÃ¥l = Questions[spÃ¸rgesmÃ¥l];
+            Questions.RemoveAt(spÃ¸rgesmÃ¥l);
             Elever.RemoveAt(0);
 
 

@@ -519,6 +519,91 @@ Transform:
   m_Children: []
   m_Father: {fileID: 68898472}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &228679972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 228679973}
+  - component: {fileID: 228679974}
+  m_Layer: 0
+  m_Name: wall_top_layer (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &228679973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228679972}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.04, y: -4.58, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1669195396}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &228679974
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228679972}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 11.959918, y: -1.9999691}
+      - {x: -11.922515, y: -1.9326644}
+      - {x: -11.969102, y: 6.5032434}
+      - {x: -12.106035, y: -2.055106}
+      - {x: -12.067858, y: -2.1187363}
+      - {x: -12.004229, y: -2.118736}
+      - {x: 11.989545, y: -2.0971968}
+      - {x: 12.106144, y: 4.612086}
+  m_UseDelaunayMesh: 0
 --- !u!1 &261902663
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,8 +670,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.121549964, y: 1.6252999, z: 0}
-    m_Extent: {x: 1.34735, y: 2.631, z: 0}
+    m_Center: {x: 0.12224996, y: 1.6297001, z: 0}
+    m_Extent: {x: 1.35445, y: 2.6327, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1084,13 +1169,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282490069}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -16.31, y: 14.24, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.33, y: -3.61, z: 0}
   m_LocalScale: {x: 1.8689835, y: 1.8689835, z: 1.8689835}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &282490072
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9103,11 +9188,11 @@ Transform:
   m_GameObject: {fileID: 1003894731}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.75, y: 10.85, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalPosition: {x: 5.9, y: 4.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1669195396}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1003894734
 BoxCollider2D:
@@ -10067,8 +10152,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.12199998, y: 1.629, z: 0}
-    m_Extent: {x: 1.3607, y: 2.6341999, z: 0}
+    m_Center: {x: 0.12084997, y: 1.62955, z: 0}
+    m_Extent: {x: 1.35655, y: 2.6275501, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10204,8 +10289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ca4be08847dfd47b245e9819b3e525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tMin: 20
-  tMax: 60
+  tMin: 40
+  tMax: 80
   studentsraisehands: 0
   student: {fileID: 7306703749324670444, guid: fc8e95544bfade845b02dad90980127f, type: 3}
   r: 0
@@ -11103,8 +11188,10 @@ Transform:
   - {fileID: 1548948433}
   - {fileID: 556507542}
   - {fileID: 459408853}
+  - {fileID: 228679973}
   - {fileID: 1561232222}
   - {fileID: 897982399}
+  - {fileID: 1003894733}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1669195398
@@ -14004,7 +14091,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Your Trust to The students
+  m_text: Din tillid
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -18324,7 +18411,6 @@ SceneRoots:
   - {fileID: 2113441130}
   - {fileID: 1422482494}
   - {fileID: 1669195396}
-  - {fileID: 1003894733}
   - {fileID: 261962336}
   - {fileID: 728065953}
   - {fileID: 504424583}

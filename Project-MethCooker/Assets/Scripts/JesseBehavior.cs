@@ -45,7 +45,7 @@ public class JesseBehavior : MonoBehaviour
             dialogeOpen = false;
         }
 
-        cashText.text = "Cash: " + cash;
+        cashText.text = "Penge: " + cash;
         
     }
 
@@ -71,36 +71,36 @@ public class JesseBehavior : MonoBehaviour
         sellButton.gameObject.SetActive(false);
         if (sellDrugs.methOnBody > 0)
         {
-            dialogeText.text = "Jesse Cyanman: Thank's Mr. Mørk";
+            dialogeText.text = "Jesse Cyanman: Takker Mr. Mørk";
             cash += sellDrugs.methOnBody * 200;
             sellDrugs.methOnBody = 0;
 
         }
         else if (sellDrugs.LSDOnBody > 0)
         {
-            dialogeText.text = "Jesse Cyanman: Thank's Mr. Mørk";
+            dialogeText.text = "Jesse Cyanman: Takker Mr. Mørk";
             cash += sellDrugs.LSDOnBody * 150;
             sellDrugs.LSDOnBody = 0;
         }
         else if (sellDrugs.EcstasyOnBody > 0)
         {
-            dialogeText.text = "Jesse Cyanman: Thank's Mr. Mørk";
+            dialogeText.text = "Jesse Cyanman: Takker Mr. Mørk";
             cash += sellDrugs.EcstasyOnBody * 100;
             sellDrugs.EcstasyOnBody = 0;
         }
         else
         {
-            dialogeText.text = "Sorry Mr. Mørk, you don't have any drugs";
+            dialogeText.text = "Du har ingen stoffer for pokker";
         }
     }
 
     public void NewRecipePress()
     {
-        Debug.Log("New recipe");
+        Debug.Log("Ny opskrift");
         //currentRecipe = newRecipe;
         newRecipeButton.gameObject.SetActive(false);
         sellButton.gameObject.SetActive(false);
-        dialogeText.text = "Here you go Mr. Mørk";
+        dialogeText.text = "Her Mr. Mørk";
         int randomNumber = Random.Range(0, randomRecipe.Length);
 
         NoteCreater currentNote = newRecipe.currentNote;
