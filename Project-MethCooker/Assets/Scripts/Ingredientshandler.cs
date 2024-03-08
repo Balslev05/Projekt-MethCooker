@@ -12,7 +12,7 @@ public class Ingredientshandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Items = GameObject.FindGameObjectsWithTag("Items").ToList();
+        Items = GameObject.FindGameObjectsWithTag("Drug").ToList();
         reshuffle(Items);
     }
 
@@ -27,6 +27,7 @@ public class Ingredientshandler : MonoBehaviour
         
         while (PossibleIngredients.Count > 0)
         {
+            print("Reshuffel");
             int Tal;
             Tal = Random.Range(0, PossibleIngredients.Count);
             Items[0].GetComponent<Itemspawner>().Drugs = PossibleIngredients[Tal];

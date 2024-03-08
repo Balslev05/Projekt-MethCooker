@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Gelatine
   m_EditorClassIdentifier: 
   name: Gelatine
+  sprite: {fileID: 139747972, guid: 915cb94a97e673b4fadadc03de6367b8, type: 3}

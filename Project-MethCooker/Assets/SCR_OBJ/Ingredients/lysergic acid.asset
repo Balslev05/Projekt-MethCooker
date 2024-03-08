@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: lysergic acid
   m_EditorClassIdentifier: 
   name: Lysergic acid
+  sprite: {fileID: 763895590, guid: 915cb94a97e673b4fadadc03de6367b8, type: 3}

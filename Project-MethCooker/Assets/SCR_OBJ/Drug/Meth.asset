@@ -19,4 +19,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 65718df910c0aa2428868e96adfe1c67, type: 2}
   - {fileID: 11400000, guid: 9cd83c9a953dea2419a1907ebff7dc1a, type: 2}
   - {fileID: 11400000, guid: 0c195b7c883e82940842a60454c03b14, type: 2}
-  cookingTimer: 90
+  cookingTimer: 60

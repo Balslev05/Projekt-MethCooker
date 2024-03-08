@@ -7,6 +7,7 @@ using UnityEditor.Rendering.Universal;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
@@ -40,26 +41,28 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject dust2;
     [SerializeField] private GameObject feet;
 
+    [Header("AcidSettings")] 
+    public GameObject tavel;
+    public GameObject TavelUI;
+    public GameObject walkpointsA,walkpointsB;
+    public float WalkSpeed;
+    [SerializeField] public GameObject currentstudent;
+    public AcidBath acidBath;
 
 
     [Header("Outfit")] 
     public bool Kidle;
     
     private float startSpeed;
-    private bool _isFacingRight;
-    private bool sprinting = false;
-    private bool CanStand = false;
-    private bool cutscene = false;
-    private bool isTeaching;
+    [SerializeField] private bool _isFacingRight;
+    [SerializeField] private bool sprinting = false;
+    [SerializeField] private bool CanStand = false;
+    [SerializeField] public bool isTeaching;
+    public bool cutscene = false;
     
     private Vector2 _movement;
     private Vector2 _lastDirection;
     private Vector2 normalSize;
-
-    [Header("AcidSettings")] 
-    public GameObject tavel;
-    public GameObject walkpointsA,walkpointsB;
-    public float WalkSpeed;
     
     
     
@@ -226,18 +229,34 @@ public class PlayerMovement : MonoBehaviour
 
     public IEnumerator AcidScene()
     {
-        tavel.SetActive(false);
-        transform.position = tavel.transform.position;
-        
-        cutscene = true;
-        animator.Play("Walk");
-        transform.DOMove(walkpointsA.transform.position, WalkSpeed).SetEase(Ease.Linear);
-        yield return new WaitForSeconds(WalkSpeed);
-        transform.DOMove(walkpointsB.transform.position, WalkSpeed + 2).SetEase(Ease.Linear);
-        yield return new WaitForSeconds(WalkSpeed + 2.5f);
-        Debug.Log("EndCutscene");
-        
-        cutscene = false;
+        if (!acidBath._dissolving)
+        {
+            TavelUI.transform.localScale = new Vector3(0,0,0);
+            transform.position = tavel.transform.position;
+            cutscene = true;
+            
+            animator.Play("Walk");
+            transform.DOMove(walkpointsA.transform.position, WalkSpeed).SetEase(Ease.Linear);
+            
+            currentstudent.transform.DOMove(walkpointsA.transform.position, WalkSpeed + 0.5f).SetEase(Ease.Linear);
+            
+            yield return new WaitForSeconds(WalkSpeed + 0.8f);
+            Kidle = true;
+            animator.Play("KidleWalk");
+            
+            transform.DOMove(walkpointsB.transform.position, WalkSpeed).SetEase(Ease.Linear);
+             
+            currentstudent.transform.DOMove(walkpointsB.transform.position, WalkSpeed + 0.5f).SetEase(Ease.Linear);
+
+            yield return new WaitForSeconds(WalkSpeed + 1);
+            
+            animator.Play("Idle");
+            
+            acidBath.Dissolving();
+            isTeaching = false;
+            Destroy(currentstudent);
+            cutscene = false;
+        }
 
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -255,13 +274,13 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Student"))
         {
             if (other.GetComponent<Students>().handisraised && Input.GetKeyDown(KeyCode.E))
             {
+                currentstudent = other.gameObject;
                 isTeaching = true;
                 other.GetComponent<Students>().Spøgsmål();
             }

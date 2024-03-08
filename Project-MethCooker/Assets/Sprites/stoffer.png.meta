@@ -1,0 +1,534 @@
+fileFormatVersion: 2
+guid: 915cb94a97e673b4fadadc03de6367b8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pheryl
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 191
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9474e55c719e2264a8136cb2abc8b616
+      internalID: -658091318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acetic acid
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 176
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa3b1bdf4834083438f4a6f2408e0bf5
+      internalID: 95411469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: caffeine
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 165
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6bda00e4e35394a963dc8e25b45904
+      internalID: -1568896032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chroform
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 152
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 457c0f34271e25a4d8cb33028ca3f2cb
+      internalID: 499461343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ephedrine
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 137
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9533b750766c8e46891650ece57eb9c
+      internalID: -661317151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gelateine
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 125
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a99534794a5137c4d871241b3db68158
+      internalID: 139747972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ethyl
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 110
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a0cd587240b4f14da46a2a03ace43b1
+      internalID: -849123573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rye seed
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 97
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b51fd36748983f64cb13bb2809845915
+      internalID: -1387608425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hydroaine
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 82
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e88b7b28ad3ee7845977a3e38b38a259
+      internalID: -1629649299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ketamine
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 72
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6aafddde530d1459de3d8d8ca59689
+      internalID: -122038482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phenecylae
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 58
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed6460bbf2b8e8f41b8528afe35759d5
+      internalID: -379320534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: methylanine
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 45
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 366cc86f3e7962045a0a6462491c6540
+      internalID: -59866903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meth
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 30
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29cb55ff693e8648bd38844f5f22ae0
+      internalID: -1068901561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ecstasy
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 18
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be0db775e499e0443aca5414183e214f
+      internalID: 964761527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LSD
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 7
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821cdf0c4c3e608499127bcb7ad081a6
+      internalID: 763895590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Ephedrine: -661317151
+      Gelateine: 139747972
+      LSD: 763895590
+      Pheryl: -658091318
+      acetic acid: 95411469
+      caffeine: -1568896032
+      chroform: 499461343
+      ecstasy: 964761527
+      ethyl: -849123573
+      hydroaine: -1629649299
+      ketamine: -122038482
+      meth: -1068901561
+      methylanine: -59866903
+      phenecylae: -379320534
+      rye seed: -1387608425
+      stoffer_1: 1624170716
+      stoffer_10: -986022926
+      stoffer_11: 701769060
+      stoffer_12: 1523414862
+      stoffer_13: 1436040390
+      stoffer_14: 1088339764
+      stoffer_15: 1420172346
+      stoffer_17: -1418126557
+      stoffer_18: 436693893
+      stoffer_19: -368271068
+      stoffer_2: -1541724460
+      stoffer_20: 2078559543
+      stoffer_21: -665997411
+      stoffer_23: 1001860011
+      stoffer_24: 1488828959
+      stoffer_25: -1241370507
+      stoffer_26: 838846753
+      stoffer_27: 168852873
+      stoffer_28: -628293432
+      stoffer_3: -681963842
+      stoffer_30: -427136431
+      stoffer_31: -626296821
+      stoffer_32: 1715165585
+      stoffer_33: -758652400
+      stoffer_34: 552817756
+      stoffer_35: 908015111
+      stoffer_37: -644413210
+      stoffer_38: 808572029
+      stoffer_39: 235272860
+      stoffer_4: 1421746108
+      stoffer_40: 1326277820
+      stoffer_41: -1289040242
+      stoffer_43: -182469522
+      stoffer_44: -1403365083
+      stoffer_46: -492269225
+      stoffer_47: 1706939222
+      stoffer_48: 352957953
+      stoffer_5: -647877393
+      stoffer_50: -1153304653
+      stoffer_51: 409408053
+      stoffer_52: 1291114401
+      stoffer_53: -427301946
+      stoffer_54: 1942404823
+      stoffer_56: 1766206671
+      stoffer_57: 665391460
+      stoffer_58: 869234448
+      stoffer_59: -1655410428
+      stoffer_6: 212146208
+      stoffer_60: -1923163845
+      stoffer_62: -1840775179
+      stoffer_63: -1361743171
+      stoffer_64: 1408246803
+      stoffer_65: 1197778592
+      stoffer_66: 1657920422
+      stoffer_67: 242160914
+      stoffer_68: 1131745046
+      stoffer_69: -1581803806
+      stoffer_7: -1971612848
+      stoffer_70: -4358085
+      stoffer_71: 1729989828
+      stoffer_73: 1955467801
+      stoffer_74: 1050189429
+      stoffer_75: 1693382759
+      stoffer_76: 572743947
+      stoffer_77: -1769856587
+      stoffer_78: 381043084
+      stoffer_79: 695833192
+      stoffer_81: -1823338102
+      stoffer_82: -85711787
+      stoffer_83: -857459968
+      stoffer_85: 1080251290
+      stoffer_86: 1028406906
+      stoffer_87: -287161321
+      stoffer_88: -2015906721
+      stoffer_9: -274931280
+      stoffer_90: -1729664815
+      stoffer_91: 1837814329
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

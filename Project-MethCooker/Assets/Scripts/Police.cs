@@ -7,24 +7,25 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
-
+using TMPro;
 public class Police : MonoBehaviour
 {
     [Header("Assignebel")] 
     public AudioSource sirens;
     public PlayerMovement Morten;
     public Repetation Morten_trust;
+    public TMP_Text warningMessege_UI;
     
     [Header("Stats")]
     public float policetimer;
     public float carSpeed;
     public float punishment;
+    public string warningMessege;
     
     [Header("Timers")]
     public float timer;
     public float min_T,max_T;
     public float ScoutingTimer;
-    
     
     [Header("Points")]
     public Transform PointA;
@@ -40,12 +41,14 @@ public class Police : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+       
         StartPos = gameObject.transform.position;
         sirens.volume = 0;
     }
 
     void Start()
     {
+        warningMessege_UI.text = " "; 
         transform.position = StartPos;
         timer = Random.Range(min_T,max_T);
         if (!_running)
@@ -66,8 +69,10 @@ public class Police : MonoBehaviour
         caughtTimer = 0;
         _running = true;
         caught = false;
+        // sound 
         yield return new WaitForSeconds(timer + carSpeed);
         
+        warningMessege_UI.text = warningMessege;
         //kommer frem og holder
         DOTween.To(() => sirens.volume, x => sirens.volume = x, sirensMaxSound, carSpeed).SetEase(Ease.OutExpo);
         gameObject.transform.DOLocalMove(PointA.transform.position, carSpeed).SetEase(Ease.OutExpo);
@@ -75,13 +80,15 @@ public class Police : MonoBehaviour
         yield return new WaitForSeconds(ScoutingTimer + carSpeed);
         
         // kør væk
-        gameObject.transform.DOLocalMove(PointB.transform.position, carSpeed).SetEase(Ease.OutExpo);
         caughtTimer = 0;
+        _scouting = false;
+        warningMessege_UI.text = "";
+        gameObject.transform.DOLocalMove(PointB.transform.position, carSpeed).SetEase(Ease.OutExpo);
         DOTween.To(() => sirens.volume, x => sirens.volume = x, 0, carSpeed).SetEase(Ease.OutExpo);
         yield return new WaitForSeconds(1 + carSpeed);
         
         //efter den er kørt
-        _scouting = false;
+         caughtTimer = 0;
         _running = false;
         Start();
     }
@@ -89,7 +96,7 @@ public class Police : MonoBehaviour
 
     public void Scouting()
     {
-        if (Morten.jumping == false && _scouting)
+        if (Morten.jumping == false && _scouting && !Morten.cutscene)
         {
             caughtTimer += Time.deltaTime;
         }

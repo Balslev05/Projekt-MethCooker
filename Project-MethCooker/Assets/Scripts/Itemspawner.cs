@@ -14,6 +14,7 @@ public class Itemspawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
+        gameObject.GetComponent<SpriteRenderer>().sprite = Drugs.sprite;
+        gameObject.name = Drugs.name;
+    }  
 }

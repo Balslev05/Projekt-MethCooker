@@ -15,6 +15,10 @@ TagManager:
   - Kidle
   - Items
   - Student
+  - Svar
+  - Titel
+  - tavel
+  - "sp\xF8rgsm\xE5l"
   layers:
   - Default
   - TransparentFX

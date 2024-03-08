@@ -24,6 +24,8 @@ public class Repetation : MonoBehaviour
         slider.value = maxTrust;
         currentTrust = maxTrust;
         oldTrust = currentTrust;
+        
+        DOTween.SetTweensCapacity(10000,1000);
     }
 
     // Update is called once per frame
@@ -33,7 +35,6 @@ public class Repetation : MonoBehaviour
         slider.value = currentTrust;
         if (currentTrust < oldTrust)
         {
-            Debug.Log("Shaking");
             CinemachineShake.Instance.ShakeCamera(0.22f, 0.2f);
             oldTrust = currentTrust;
             reputationDown.DOFade(0.5f, 0.1f).SetEase(Ease.OutCirc).SetLoops(2, LoopType.Yoyo);

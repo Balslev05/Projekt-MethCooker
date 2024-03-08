@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Phencylacetuc Acid
   m_EditorClassIdentifier: 
   name: Phencylacetuc acid
+  sprite: {fileID: -379320534, guid: 915cb94a97e673b4fadadc03de6367b8, type: 3}
