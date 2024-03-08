@@ -670,8 +670,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.12224996, y: 1.6297001, z: 0}
-    m_Extent: {x: 1.35445, y: 2.6327, z: 0}
+    m_Center: {x: 0.11954999, y: 1.6278001, z: 0}
+    m_Extent: {x: 1.35655, y: 2.6301003, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10152,8 +10152,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.12084997, y: 1.62955, z: 0}
-    m_Extent: {x: 1.35655, y: 2.6275501, z: 0}
+    m_Center: {x: 0.11194998, y: 1.62795, z: 0}
+    m_Extent: {x: 1.35705, y: 2.6331499, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -12270,7 +12270,7 @@ MonoBehaviour:
   policetimer: 2
   carSpeed: 2
   punishment: 3
-  warningMessege: Warning Police are Coming [hold SPACE] to keep you trust
+  warningMessege: Advarsel politiet kommer [hold SPACE] for at beholde din tillid
   timer: 2
   min_T: 20
   max_T: 50
