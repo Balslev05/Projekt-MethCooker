@@ -96,7 +96,7 @@ public class Police : MonoBehaviour
 
     public void Scouting()
     {
-        if (Morten.jumping == false && _scouting && !Morten.cutscene)
+        if (Morten.jumping == false && _scouting && !Morten.cutscene && !Morten.isTeaching)
         {
             caughtTimer += Time.deltaTime;
         }
